@@ -1,0 +1,13 @@
+platform :ios, '8.0'
+
+target "BearUp" do
+
+pod 'AFNetworking', '~> 3.0.4'
+pod 'SDWebImage', '~> 3.7.5'
+pod 'Masonry', '~> 0.6.4'
+pod 'MBProgressHUD', '~> 1.0.0'
+pod 'MJRefresh', '~> 3.1.0'
+pod 'MMDrawerController', '~> 0.5.7'
+
+end
+
