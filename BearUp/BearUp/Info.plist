@@ -42,5 +42,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>PMingLiU.ttf</string>
+		<string>Cosmic Love-.ttf</string>
+		<string></string>
+	</array>
 </dict>
 </plist>

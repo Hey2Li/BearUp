@@ -7,7 +7,7 @@
 //
 
 #import "LaunchViewController.h"
-#import "HomeViewController.h"
+#import "HomeDrawerViewController.h"
 #import "BaseNavigationController.h"
 
 @interface LaunchViewController ()
@@ -21,21 +21,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.backImage = [UIImageView new];
+    self.backImage.backgroundColor = [UIColor clearColor];
+    self.frontImage = [UIImageView new];
+    self.frontImage.backgroundColor = [UIColor clearColor];
     [self.view addSubview:self.backImage];
+    self.backImage.contentMode = UIViewContentModeScaleAspectFit;
     [self.backImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view.mas_centerX);
+        make.centerY.equalTo(self.view.mas_centerY);
+        make.width.equalTo(@(kScreenHeight + 40));
+        make.height.equalTo(@(kScreenHeight + 40));
+    }];
+    [self.view addSubview:self.frontImage];
+    [self.frontImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
-        make.right.equalTo(self.view.mas_right).offset(40);
+        make.right.equalTo(self.view.mas_right);
         make.top.equalTo(self.view.mas_top);
         make.bottom.equalTo(self.view.mas_bottom);
     }];
-    [self.backImage addSubview:self.frontImage];
-    [self.frontImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.backImage.mas_left);
-        make.right.equalTo(self.backImage.mas_right);
-        make.top.equalTo(self.backImage.mas_top);
-        make.bottom.equalTo(self.backImage.mas_bottom);
-    }];
+    [self.view bringSubviewToFront:self.frontImage];
     //根据机型判断分辨率
     NSString *device;
     if (kScreenHeight == 736) {
@@ -101,7 +107,7 @@
     [UIView animateWithDuration:1 animations:^{
         self.view.alpha = 0;
     } completion:^(BOOL finished) {
-        self.view.window.rootViewController = [[BaseNavigationController alloc]initWithRootViewController:[HomeViewController new]];;
+        self.view.window.rootViewController = [[BaseNavigationController alloc]initWithRootViewController:[HomeDrawerViewController new]];;
     }];
 }
 - (void)animation {
