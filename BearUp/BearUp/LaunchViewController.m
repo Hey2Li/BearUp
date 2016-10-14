@@ -104,8 +104,8 @@
 }
 - (void)animation {
     [_timer invalidate];
-    [UIView animateWithDuration:3 animations:^{
-        self.backImage.transform = CGAffineTransformMakeTranslation(-20, 0);
+    [UIView animateWithDuration:2.5 animations:^{
+        self.backImage.transform = CGAffineTransformMakeTranslation(-30, 0);
     } completion:^(BOOL finished) {
         [self launchFinish];
     }];
@@ -113,7 +113,7 @@
 - (void)launchFinish{
     [UIView animateWithDuration:1 animations:^{
         self.view.alpha = 0;
-        self.view.window.rootViewController = [[BaseNavigationController alloc]initWithRootViewController:[HomeDrawerViewController new]];;
+        self.view.window.rootViewController = [[BaseNavigationController alloc]initWithRootViewController:[HomeDrawerViewController new]];
     } completion:^(BOOL finished) {
        
     }];

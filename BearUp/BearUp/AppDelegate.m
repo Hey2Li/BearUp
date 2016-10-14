@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [_window makeKeyAndVisible];
-    _window.backgroundColor = [UIColor whiteColor];
+    _window.backgroundColor = [UIColor lightGrayColor];
     _window.rootViewController = [LaunchViewController new];
     return YES;
 }

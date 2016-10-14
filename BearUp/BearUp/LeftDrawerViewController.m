@@ -141,53 +141,28 @@
         cell = [[LeftDrawerTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.backgroundColor = RGBCOLOR(38, 38, 38);
     }
+    cell.leftDrawerBtnClick = ^{
+        NSLog(@"点击了..");
+    };
     switch (indexPath.row) {
         case 0:{
-//            [UIView animateWithDuration:duration animations:^{
-//                [cell.TitleBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-//                    make.centerX.equalTo(cell.contentView.mas_centerX);
-//                    make.centerY.equalTo(cell.contentView.mas_centerY);
-//                    make.width.equalTo(@(188));
-//                    make.top.equalTo(cell.contentView.mas_top);
-//                    make.bottom.equalTo(cell.contentView.mas_bottom);
-//                }];
-//            }];
             [cell.TitleBtn setTitle:@"首 页" forState:UIControlStateNormal];
         }
             break;
         case 1:{
-//            [UIView animateWithDuration:duration animations:^{
-//                [cell.TitleBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-//                    make.centerX.equalTo(cell.contentView.mas_centerX);
-//                }];
-//            }];
             [cell.TitleBtn setTitle:@"文 字" forState:UIControlStateNormal];
         }
             break;
         case 2:{
-//            [UIView animateWithDuration:duration animations:^{
-//                [cell.TitleBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-//                    make.centerX.equalTo(cell.contentView.mas_centerX);
-//                }];
-//            }];
             [cell.TitleBtn setTitle:@"影 像" forState:UIControlStateNormal];
         }
             break;
         case 3:{
-//            [UIView animateWithDuration:duration animations:^{
-//                [cell.TitleBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-//                    make.centerX.equalTo(cell.contentView.mas_centerX);
-//                }];
-//            }];
+
             [cell.TitleBtn setTitle:@"谈 论" forState:UIControlStateNormal];
         }
             break;
         case 4:{
-//            [UIView animateWithDuration:duration animations:^{
-//                [cell.TitleBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-//                    make.centerX.equalTo(cell.contentView.mas_centerX);
-//                }];
-//            }];
             [cell.TitleBtn setTitle:@"搜 索" forState:UIControlStateNormal];
         }
             break;
