@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C5CF0831DB069A4002D8A05 /* LeftDrawerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CF0821DB069A4002D8A05 /* LeftDrawerTableViewCell.m */; };
 		1C5D3E3C1DADCC1E008529C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D3E3B1DADCC1E008529C0 /* main.m */; };
 		1C5D3E3F1DADCC1E008529C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D3E3E1DADCC1E008529C0 /* AppDelegate.m */; };
 		1C5D3E421DADCC1E008529C0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D3E411DADCC1E008529C0 /* ViewController.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C5CF0811DB069A4002D8A05 /* LeftDrawerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftDrawerTableViewCell.h; sourceTree = "<group>"; };
+		1C5CF0821DB069A4002D8A05 /* LeftDrawerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftDrawerTableViewCell.m; sourceTree = "<group>"; };
 		1C5D3E371DADCC1E008529C0 /* BearUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BearUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C5D3E3B1DADCC1E008529C0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1C5D3E3D1DADCC1E008529C0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -127,6 +130,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1C5CF07F1DB068FE002D8A05 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1C5D3E7A1DADE170008529C0 /* LeftDrawerViewController.h */,
+				1C5D3E7B1DADE171008529C0 /* LeftDrawerViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1C5CF0801DB06911002D8A05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C5CF0811DB069A4002D8A05 /* LeftDrawerTableViewCell.h */,
+				1C5CF0821DB069A4002D8A05 /* LeftDrawerTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		1C5D3E2E1DADCC1E008529C0 = {
 			isa = PBXGroup;
 			children = (
@@ -152,8 +173,10 @@
 		1C5D3E391DADCC1E008529C0 /* BearUp */ = {
 			isa = PBXGroup;
 			children = (
-				1C79B8871DAF330000B5AFC5 /* Launch */,
 				1C79B87C1DAF220400B5AFC5 /* Home */,
+				1C79B8921DAF720F00B5AFC5 /* RightDrawer */,
+				1C79B8911DAF720500B5AFC5 /* LeftDrawer */,
+				1C79B8871DAF330000B5AFC5 /* Launch */,
 				1C5D3E761DADDCB0008529C0 /* Drawer */,
 				1C5D3E6D1DADD136008529C0 /* Base */,
 				1C5D3E3D1DADCC1E008529C0 /* AppDelegate.h */,
@@ -218,12 +241,6 @@
 				1C5D3E871DAE34B0008529C0 /* MMExampleDrawerVisualStateManager.m */,
 				1C5D3E771DADDCFD008529C0 /* HomeDrawerViewController.h */,
 				1C5D3E781DADDCFD008529C0 /* HomeDrawerViewController.m */,
-				1C5D3E7A1DADE170008529C0 /* LeftDrawerViewController.h */,
-				1C5D3E7B1DADE171008529C0 /* LeftDrawerViewController.m */,
-				1C5D3E7D1DADE184008529C0 /* RightDrawerViewController.h */,
-				1C5D3E7E1DADE184008529C0 /* RightDrawerViewController.m */,
-				1C79B8761DAF213700B5AFC5 /* TitleView.h */,
-				1C79B8771DAF213700B5AFC5 /* TitleView.m */,
 			);
 			name = Drawer;
 			sourceTree = "<group>";
@@ -231,8 +248,9 @@
 		1C79B87C1DAF220400B5AFC5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				1C79B8831DAF2E7500B5AFC5 /* HomeViewController.h */,
-				1C79B8841DAF2E7500B5AFC5 /* HomeViewController.m */,
+				1C79B8901DAF71E900B5AFC5 /* Model */,
+				1C79B88F1DAF71DE00B5AFC5 /* Controller */,
+				1C79B88E1DAF71D500B5AFC5 /* View */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -244,6 +262,73 @@
 				1C79B8891DAF331600B5AFC5 /* LaunchViewController.m */,
 			);
 			name = Launch;
+			sourceTree = "<group>";
+		};
+		1C79B88E1DAF71D500B5AFC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C79B8761DAF213700B5AFC5 /* TitleView.h */,
+				1C79B8771DAF213700B5AFC5 /* TitleView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1C79B88F1DAF71DE00B5AFC5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1C79B8831DAF2E7500B5AFC5 /* HomeViewController.h */,
+				1C79B8841DAF2E7500B5AFC5 /* HomeViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1C79B8901DAF71E900B5AFC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1C79B8911DAF720500B5AFC5 /* LeftDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				1C5CF0801DB06911002D8A05 /* View */,
+				1C5CF07F1DB068FE002D8A05 /* Controller */,
+			);
+			name = LeftDrawer;
+			sourceTree = "<group>";
+		};
+		1C79B8921DAF720F00B5AFC5 /* RightDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				1C79B8961DAF72AE00B5AFC5 /* Model */,
+				1C79B8951DAF72A500B5AFC5 /* View */,
+				1C79B8931DAF726F00B5AFC5 /* Controller */,
+			);
+			name = RightDrawer;
+			sourceTree = "<group>";
+		};
+		1C79B8931DAF726F00B5AFC5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1C5D3E7D1DADE184008529C0 /* RightDrawerViewController.h */,
+				1C5D3E7E1DADE184008529C0 /* RightDrawerViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1C79B8951DAF72A500B5AFC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1C79B8961DAF72AE00B5AFC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		E919BF8A8E3DA742A9DFBB96 /* Frameworks */ = {
@@ -444,6 +529,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C5D3E7F1DADE184008529C0 /* RightDrawerViewController.m in Sources */,
+				1C5CF0831DB069A4002D8A05 /* LeftDrawerTableViewCell.m in Sources */,
 				1C5D3E881DAE34B0008529C0 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				1C79B87B1DAF219900B5AFC5 /* UIViewExt.m in Sources */,
 				1C79B88A1DAF331600B5AFC5 /* LaunchViewController.m in Sources */,

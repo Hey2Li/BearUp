@@ -8,16 +8,36 @@
 
 #import "HomeViewController.h"
 
-@interface HomeViewController ()
-
+@interface HomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@property (nonatomic, strong) UICollectionView *myCollectionView;
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self initWithNavi];
+    [self initWithView];
+}
+- (void)initWithView{
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    flowLayout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight);
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    
+    _myCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) collectionViewLayout:flowLayout];
+    _myCollectionView.backgroundColor = [UIColor whiteColor];
+    _myCollectionView.pagingEnabled = YES;
+    _myCollectionView.dataSource = self;
+    _myCollectionView.delegate = self;
+    _myCollectionView.showsHorizontalScrollIndicator = NO;
+    _myCollectionView.showsVerticalScrollIndicator = NO;
+    //    使视图控制器顶部不留空白
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self.view addSubview:_myCollectionView];
+    [self.view sendSubviewToBack:_myCollectionView];
+    [_myCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
+    
 }
 - (void)initWithNavi{
     _navigationView = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
@@ -44,6 +64,39 @@
     _navigationView.rightBarButton = personBtn;
     
     [self.view addSubview:_navigationView];
+}
+
+#pragma mark - UICollectionDelegate
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 5;
+}
+- (UIColor *)randomColor {
+    CGFloat hue = arc4random() % 256 / 256.0;
+    CGFloat saturation = arc4random() % 128 / 256.0 + 0.5;
+    CGFloat brightness = arc4random() % 128 / 256.0 + 0.5;
+    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.backgroundColor = [self randomColor];
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(kScreenWidth, kScreenHeight);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0;
 }
 
 #pragma mark - ButtonAction

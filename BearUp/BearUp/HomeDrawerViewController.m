@@ -28,6 +28,9 @@
     //设置滑动样式
    [[MMExampleDrawerVisualStateManager sharedManager] setLeftDrawerAnimationType:MMDrawerAnimationTypeParallax];
     [[MMExampleDrawerVisualStateManager sharedManager] setRightDrawerAnimationType:MMDrawerAnimationTypeParallax];
+    [self setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [self setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    self.animationVelocity = 600;
     [self setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
          MMDrawerControllerDrawerVisualStateBlock block;
          block = [[MMExampleDrawerVisualStateManager sharedManager]
