@@ -105,7 +105,7 @@
 - (void)animation {
     [_timer invalidate];
     [UIView animateWithDuration:2.5 animations:^{
-        self.backImage.transform = CGAffineTransformMakeTranslation(-30, 0);
+        self.backImage.transform = CGAffineTransformMakeTranslation(-20, 0);
     } completion:^(BOOL finished) {
         [self launchFinish];
     }];

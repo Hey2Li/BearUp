@@ -26,7 +26,7 @@
     self.showsShadow = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
     //设置滑动样式
-   [[MMExampleDrawerVisualStateManager sharedManager] setLeftDrawerAnimationType:MMDrawerAnimationTypeSlide];
+    [[MMExampleDrawerVisualStateManager sharedManager] setLeftDrawerAnimationType:MMDrawerAnimationTypeSlide];
     [[MMExampleDrawerVisualStateManager sharedManager] setRightDrawerAnimationType:MMDrawerAnimationTypeSlide];
     [self setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
