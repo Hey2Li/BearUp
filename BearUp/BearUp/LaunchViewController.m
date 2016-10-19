@@ -22,18 +22,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = RGBCOLOR(38, 38, 38);
+    
     self.backImage = [UIImageView new];
     self.backImage.backgroundColor = [UIColor clearColor];
+    
     self.frontImage = [UIImageView new];
     self.frontImage.backgroundColor = [UIColor clearColor];
+    
     [self.view addSubview:self.backImage];
-    self.backImage.contentMode = UIViewContentModeScaleAspectFit;
+    self.backImage.contentMode = UIViewContentModeScaleAspectFill;
     [self.backImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_centerX);
         make.centerY.equalTo(self.view.mas_centerY);
         make.width.equalTo(@(kScreenHeight + 40));
         make.height.equalTo(@(kScreenHeight + 40));
     }];
+    
     [self.view addSubview:self.frontImage];
     [self.frontImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
