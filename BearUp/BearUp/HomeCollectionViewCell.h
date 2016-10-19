@@ -8,11 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, CellStyle) {
+typedef NS_ENUM(NSInteger, HomeCollectionCellStyle) {
     CellStyleNone = 0,
     CellStyleVideo,
     CellStyleMusic,
 };
 @interface HomeCollectionViewCell : UICollectionViewCell
-@property (nonatomic, assign) CellStyle *cellStyle;
+@property (nonatomic, assign) HomeCollectionCellStyle cellStyle;
+@property (nonatomic, strong) UIImageView *bannerImgaeView;
+@property (nonatomic, strong) UILabel *tipLabel;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *detailLabel;
+@property (nonatomic, strong) UILabel *authorLabel;
+@property (nonatomic, strong) UIButton *commentBtn;
+@property (nonatomic, strong) UIButton *likeBtn;
+@property (nonatomic, strong) UILabel *readCountLabel;
 @end

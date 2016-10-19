@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "HomeCollectionViewCell.h"
 
 @interface HomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView *myCollectionView;
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
     [self initWithNavi];
     [self initWithView];
 }
@@ -26,7 +27,7 @@
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
     _myCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) collectionViewLayout:flowLayout];
-    _myCollectionView.backgroundColor = [UIColor whiteColor];
+    _myCollectionView.backgroundColor = [UIColor blackColor];
     _myCollectionView.pagingEnabled = YES;
     _myCollectionView.dataSource = self;
     _myCollectionView.delegate = self;
@@ -37,7 +38,7 @@
     [self.view addSubview:_myCollectionView];
     [self.view sendSubviewToBack:_myCollectionView];
     [_myCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
-    
+    [_myCollectionView registerClass:[HomeCollectionViewCell class] forCellWithReuseIdentifier:@"HomeCell"];
 }
 - (void)initWithNavi{
     _navigationView = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
@@ -82,8 +83,7 @@
     return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.backgroundColor = [self randomColor];
+    HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCell" forIndexPath:indexPath];
     return cell;
 }
 
