@@ -73,15 +73,29 @@
     //    如果沙盒里存在，从沙盒加载，并且开始动画
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
         NSArray *array = [NSArray arrayWithContentsOfFile:path];
-        NSString *imgUrl = array[arc4random_uniform((int)array.count)];
-        self.backImage.alpha = 0;
-        [self.backImage sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL){
-            [UIView animateWithDuration:0.5 animations:^{
-                _backImage.alpha = 1;
-            } completion:^(BOOL finished) {
-                [self animation];
-            }];
+        AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain",@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
+        NSURL *url = [NSURL URLWithString:@"http://static.owspace.com/static/picture_list.txt"];
+        NSURLSessionDataTask *task = [manager dataTaskWithRequest:[NSURLRequest requestWithURL:url] completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+            if ([[responseObject objectForKey:@"status"] isEqualToString:@"ok"]) {
+                NSArray *array1 = [responseObject objectForKey:@"images"];
+                if ([array1 isEqualToArray:array]) {
+                    NSString *imgUrl = array[arc4random_uniform((int)array.count)];
+                    self.backImage.alpha = 0;
+                    [self.backImage sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL){
+                        [UIView animateWithDuration:0.5 animations:^{
+                            _backImage.alpha = 1;
+                        } completion:^(BOOL finished) {
+                            [self animation];
+                        }];
+                    }];
+                }else{
+                    [self requestData:path];
+                }
+            }
         }];
+        [task resume];
     }
     //没有就从网络请求数据
     else {
