@@ -8,6 +8,7 @@
 
 #import "LeftDrawerViewController.h"
 #import "LeftDrawerTableViewCell.h"
+#import "OtherViewController.h"
 
 @interface LeftDrawerViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UIButton *BackBtn;
@@ -18,6 +19,8 @@
 @implementation LeftDrawerViewController
 @synthesize BackBtn;
 @synthesize SettingBtn;
+
+static NSString *identifier = @"MyCell";
 
 - (UITableView *)myTableView{
     if (!_myTableView) {
@@ -135,15 +138,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *identifier = @"MyCell";
     LeftDrawerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[LeftDrawerTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         cell.backgroundColor = RGBCOLOR(38, 38, 38);
     }
-    cell.leftDrawerBtnClick = ^{
-        NSLog(@"点击了..");
-    };
     switch (indexPath.row) {
         case 0:{
             [cell.TitleBtn setTitle:@"首 页" forState:UIControlStateNormal];
@@ -158,7 +157,6 @@
         }
             break;
         case 3:{
-
             [cell.TitleBtn setTitle:@"谈 论" forState:UIControlStateNormal];
         }
             break;
@@ -171,7 +169,17 @@
     }
     return cell;
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.row) {
+        case 0:
+            [self BackHome];
+            break;
+        default:
+//            [self.navigationController pushViewController:[OtherViewController new] animated:YES];
+            [self.navigationController showViewController:[OtherViewController new] sender:nil];
+            break;
+    }
+}
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     CGRect originFrame = cell.frame;
     CGRect frame = cell.frame;
@@ -196,14 +204,6 @@
         BackBtn.alpha = 1;
         SettingBtn.alpha = 1;
     }];
-//    for (int i = 1000; i < 1005; i++) {
-//        CGFloat duration = (i - 99) * 0.2;
-//        [UIView animateWithDuration:duration animations:^{
-//            UIButton *btn = [self.myTableView viewWithTag:i];
-//            btn.transform = CGAffineTransformMakeTranslation(kScreenWidth/4, 0);
-//            btn.transform = CGAffineTransformMakeScale(0.1, 0.1);
-//        }];
-//    }
 }
 - (void)viewWillAppear:(BOOL)animated {
     [self prepareForAnimation];
@@ -218,10 +218,6 @@
     SettingBtn.transform = CGAffineTransformMakeScale(0.1, 0.1);
     BackBtn.alpha = 0;
     SettingBtn.alpha = 0;
-//    for (int i = 100; i < 106; i++) {
-//        UIButton *btn = [_buttonGroup viewWithTag:i];
-//        btn.transform = CGAffineTransformMakeTranslation(-kScreenWidth/4, 0);
-//    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -31,6 +31,8 @@
 #import "MJRefreshAutoGifFooter.h"
 #import "UIViewExt.h"
 
+
+#define kWordFont(a) ([UIFont fontWithName:@"PMingLiU" size:a])
 #define kScreenWidth ([[UIScreen mainScreen] bounds].size.width)
 #define kScreenHeight ([[UIScreen mainScreen] bounds].size.height)
 //RGB颜色

@@ -36,6 +36,7 @@
         make.bottom.equalTo(self.contentView.mas_bottom);
     }];
     [self.TitleBtn setTitle:@"文  字" forState:UIControlStateNormal];
+    self.TitleBtn.userInteractionEnabled = NO;
     [self.TitleBtn addTarget:self action:@selector(leftDrawerClick) forControlEvents:UIControlEventTouchUpInside];
 }
 - (void)leftDrawerClick{
