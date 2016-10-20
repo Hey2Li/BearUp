@@ -30,6 +30,8 @@
 		1C79B88D1DAF67A400B5AFC5 /* PMingLiU.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C79B8861DAF30BE00B5AFC5 /* PMingLiU.ttf */; };
 		1C7F11341DB47E75008A259F /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F11331DB47E75008A259F /* HomeCollectionViewCell.m */; };
 		1C7F11381DB49D3D008A259F /* LTHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F11371DB49D3D008A259F /* LTHTTPSessionManager.m */; };
+		1C95E88C1DB85E9D00673E4C /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C95E88B1DB85E9D00673E4C /* OtherViewController.m */; };
+		1C95E8911DB860D800673E4C /* OtherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C95E8901DB860D800673E4C /* OtherTableViewCell.m */; };
 		5C4295645C0EF67F394DA58B /* libPods-BearUp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4161CD937EBED28FA5F69BC /* libPods-BearUp.a */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,10 @@
 		1C7F11331DB47E75008A259F /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
 		1C7F11361DB49D3D008A259F /* LTHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTHTTPSessionManager.h; sourceTree = "<group>"; };
 		1C7F11371DB49D3D008A259F /* LTHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTHTTPSessionManager.m; sourceTree = "<group>"; };
+		1C95E88A1DB85E9D00673E4C /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
+		1C95E88B1DB85E9D00673E4C /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
+		1C95E88F1DB860D800673E4C /* OtherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTableViewCell.h; sourceTree = "<group>"; };
+		1C95E8901DB860D800673E4C /* OtherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherTableViewCell.m; sourceTree = "<group>"; };
 		96602C5D5001829DAA8D8AD5 /* Pods-BearUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BearUp/Pods-BearUp.debug.xcconfig"; sourceTree = "<group>"; };
 		9CF4F0F4E24C1BF92F486E35 /* Pods-BearUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BearUp/Pods-BearUp.release.xcconfig"; sourceTree = "<group>"; };
 		E4161CD937EBED28FA5F69BC /* libPods-BearUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BearUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +185,7 @@
 		1C5D3E391DADCC1E008529C0 /* BearUp */ = {
 			isa = PBXGroup;
 			children = (
+				1C95E8891DB85D6B00673E4C /* Other */,
 				1C7F11351DB49D2B008A259F /* Network */,
 				1C79B87C1DAF220400B5AFC5 /* Home */,
 				1C79B8921DAF720F00B5AFC5 /* RightDrawer */,
@@ -347,6 +354,33 @@
 				1C7F11371DB49D3D008A259F /* LTHTTPSessionManager.m */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		1C95E8891DB85D6B00673E4C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				1C95E88E1DB860B900673E4C /* View */,
+				1C95E88D1DB860AA00673E4C /* Controller */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		1C95E88D1DB860AA00673E4C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1C95E88A1DB85E9D00673E4C /* OtherViewController.h */,
+				1C95E88B1DB85E9D00673E4C /* OtherViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1C95E88E1DB860B900673E4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C95E88F1DB860D800673E4C /* OtherTableViewCell.h */,
+				1C95E8901DB860D800673E4C /* OtherTableViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		E919BF8A8E3DA742A9DFBB96 /* Frameworks */ = {
@@ -554,10 +588,12 @@
 				1C79B88A1DAF331600B5AFC5 /* LaunchViewController.m in Sources */,
 				1C5D3E7C1DADE171008529C0 /* LeftDrawerViewController.m in Sources */,
 				1C5D3E791DADDCFD008529C0 /* HomeDrawerViewController.m in Sources */,
+				1C95E8911DB860D800673E4C /* OtherTableViewCell.m in Sources */,
 				1C5D3E701DADD289008529C0 /* BaseNavigationController.m in Sources */,
 				1C5D3E731DADD2B0008529C0 /* BaseViewController.m in Sources */,
 				1C5D3E421DADCC1E008529C0 /* ViewController.m in Sources */,
 				1C79B8781DAF213700B5AFC5 /* TitleView.m in Sources */,
+				1C95E88C1DB85E9D00673E4C /* OtherViewController.m in Sources */,
 				1C5D3E3F1DADCC1E008529C0 /* AppDelegate.m in Sources */,
 				1C5D3E3C1DADCC1E008529C0 /* main.m in Sources */,
 				1C79B8851DAF2E7500B5AFC5 /* HomeViewController.m in Sources */,
