@@ -74,7 +74,7 @@
     [detailLabel setText:@"日前，渝万高铁首次载客试运行。全长约248公里的渝万高铁，使重庆主城至万州的距离缩短为一小时。待新建郑万铁路开通后，重庆市民乘坐动车组赴京将取道渝万铁路、郑万铁路、京广铁路，全程铁路旅行时间也将由现在的12小时缩短至8小时。渝万高铁将让三峡游更加经济、便捷。经济分析人士称，万州作为渝东北三峡沿线库区的中心点，必将成为三峡旅游的重要枢纽。万州港可停靠万吨级大型游轮，可成为重要的三峡游发客地；"];
     detailLabel.numberOfLines = 0;
     [detailLabel setTextColor:[UIColor blackColor]];
-    [detailLabel setFont:[UIFont fontWithName:@"PMingLiU" size:14]];
+    [detailLabel setFont:[UIFont fontWithName:@"PMingLiU" size:15]];
     [self addSubview:detailLabel];
     [detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_left).offset(50);
