@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface OtherTableViewCell : UITableViewCell
-
+@property (nonatomic, strong) UIImageView *LeftimgaeView;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *nameLabel;
 @end

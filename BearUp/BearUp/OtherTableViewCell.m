@@ -31,6 +31,7 @@
         make.width.equalTo(@(kScreenWidth/3));
     }];
     imageView.backgroundColor = [UIColor lightGrayColor];
+    self.LeftimgaeView = imageView;
     
     UILabel *titleLabel = [UILabel new];
     titleLabel.font = kWordFont(20);
@@ -43,6 +44,7 @@
         make.centerY.equalTo(self.mas_centerY).offset(-10);
         make.height.equalTo(@30);
     }];
+    self.titleLabel = titleLabel;
     
     UILabel *nameLabel = [UILabel new];
     nameLabel.font = kWordFont(14);
@@ -55,6 +57,7 @@
         make.height.equalTo(@20);
         make.width.equalTo(@100);
     }];
+    self.nameLabel = nameLabel;
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
