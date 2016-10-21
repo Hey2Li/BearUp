@@ -8,16 +8,38 @@
 
 #import "HomeViewController.h"
 #import "HomeCollectionViewCell.h"
+#import <ImageIO/ImageIO.h>
 
 @interface HomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView *myCollectionView;
+@property (nonatomic, strong) NSMutableArray *idleImages;
+@property (nonatomic, strong) NSMutableArray *pullingImages;
+@property (nonatomic, strong) NSMutableArray *refreshingImages;
 @end
 
 @implementation HomeViewController
 
+- (NSMutableArray *)idleImages{
+    if (!_idleImages) {
+        _idleImages = [NSMutableArray array];
+    }
+    return _idleImages;
+}
+- (NSMutableArray *)pullingImages{
+    if (!_pullingImages) {
+        _pullingImages = [NSMutableArray array];
+    }
+    return _pullingImages;
+}
+- (NSMutableArray *)refreshingImages{
+    if (!_refreshingImages) {
+        _refreshingImages = [NSMutableArray array];
+    }
+    return _refreshingImages;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self initWithNavi];
     [self initWithView];
 }
@@ -27,18 +49,57 @@
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
     _myCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) collectionViewLayout:flowLayout];
-    _myCollectionView.backgroundColor = [UIColor blackColor];
+    _myCollectionView.backgroundColor = RGBCOLOR(32, 32, 32);
     _myCollectionView.pagingEnabled = YES;
     _myCollectionView.dataSource = self;
     _myCollectionView.delegate = self;
     _myCollectionView.showsHorizontalScrollIndicator = NO;
     _myCollectionView.showsVerticalScrollIndicator = NO;
-    //    使视图控制器顶部不留空白
+    //使视图控制器顶部不留空白
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view addSubview:_myCollectionView];
     [self.view sendSubviewToBack:_myCollectionView];
     [_myCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"Cell"];
     [_myCollectionView registerClass:[HomeCollectionViewCell class] forCellWithReuseIdentifier:@"HomeCell"];
+    
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"refresh_1" ofType:@"gif"];
+    NSString *pathRefreshing = [[NSBundle mainBundle]pathForResource:@"refresh_2" ofType:@"gif"];
+    self.idleImages = [self praseGIFDataToImageArray:[NSData dataWithContentsOfFile:path]];
+    self.refreshingImages = [self praseGIFDataToImageArray:[NSData dataWithContentsOfFile:pathRefreshing]];
+    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    [header setImages:self.idleImages forState:MJRefreshStateIdle];
+    [header setImages:self.pullingImages forState:MJRefreshStatePulling];
+    [header setImages:self.refreshingImages forState:MJRefreshStateRefreshing];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    header.stateLabel.hidden = YES;
+    _myCollectionView.mj_header = header;
+}
+- (void)loadData{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_myCollectionView.mj_header endRefreshing];
+    });
+}
+-(NSMutableArray *)praseGIFDataToImageArray:(NSData *)data;{
+    NSMutableArray *frames = [[NSMutableArray alloc] init];
+    CGImageSourceRef src = CGImageSourceCreateWithData((CFDataRef)data, NULL);
+    CGFloat animationTime = 0.f;
+    if (src) {
+        size_t l = CGImageSourceGetCount(src);
+        frames = [NSMutableArray arrayWithCapacity:l];
+        for (size_t i = 0; i < l; i++) {
+            CGImageRef img = CGImageSourceCreateImageAtIndex(src, i, NULL);
+            NSDictionary *properties = (NSDictionary *)CFBridgingRelease(CGImageSourceCopyPropertiesAtIndex(src, i, NULL));
+            NSDictionary *frameProperties = [properties objectForKey:(NSString *)kCGImagePropertyGIFDictionary];
+            NSNumber *delayTime = [frameProperties objectForKey:(NSString *)kCGImagePropertyGIFUnclampedDelayTime];
+            animationTime += [delayTime floatValue];
+            if (img) {
+                [frames addObject:[UIImage imageWithCGImage:img]];
+                CGImageRelease(img);
+            }
+        }
+        CFRelease(src);
+    }
+    return frames;
 }
 - (void)initWithNavi{
     _navigationView = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];

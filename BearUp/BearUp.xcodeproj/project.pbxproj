@@ -30,6 +30,8 @@
 		1C79B88D1DAF67A400B5AFC5 /* PMingLiU.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C79B8861DAF30BE00B5AFC5 /* PMingLiU.ttf */; };
 		1C7F11341DB47E75008A259F /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F11331DB47E75008A259F /* HomeCollectionViewCell.m */; };
 		1C7F11381DB49D3D008A259F /* LTHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7F11371DB49D3D008A259F /* LTHTTPSessionManager.m */; };
+		1C84E6A21DB9F74C00C49B9A /* refresh_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1C84E6A11DB9F74C00C49B9A /* refresh_1.gif */; };
+		1C84E6A41DB9F75500C49B9A /* refresh_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1C84E6A31DB9F75500C49B9A /* refresh_2.gif */; };
 		1C95E88C1DB85E9D00673E4C /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C95E88B1DB85E9D00673E4C /* OtherViewController.m */; };
 		1C95E8911DB860D800673E4C /* OtherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C95E8901DB860D800673E4C /* OtherTableViewCell.m */; };
 		5C4295645C0EF67F394DA58B /* libPods-BearUp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4161CD937EBED28FA5F69BC /* libPods-BearUp.a */; };
@@ -98,6 +100,8 @@
 		1C7F11331DB47E75008A259F /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
 		1C7F11361DB49D3D008A259F /* LTHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTHTTPSessionManager.h; sourceTree = "<group>"; };
 		1C7F11371DB49D3D008A259F /* LTHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTHTTPSessionManager.m; sourceTree = "<group>"; };
+		1C84E6A11DB9F74C00C49B9A /* refresh_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = refresh_1.gif; sourceTree = "<group>"; };
+		1C84E6A31DB9F75500C49B9A /* refresh_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = refresh_2.gif; sourceTree = "<group>"; };
 		1C95E88A1DB85E9D00673E4C /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
 		1C95E88B1DB85E9D00673E4C /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
 		1C95E88F1DB860D800673E4C /* OtherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTableViewCell.h; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 		1C5D3E3A1DADCC1E008529C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1C84E6A11DB9F74C00C49B9A /* refresh_1.gif */,
+				1C84E6A31DB9F75500C49B9A /* refresh_2.gif */,
 				1C79B8791DAF219900B5AFC5 /* UIViewExt.h */,
 				1C79B87A1DAF219900B5AFC5 /* UIViewExt.m */,
 				1C5D3E3B1DADCC1E008529C0 /* main.m */,
@@ -505,7 +511,9 @@
 			files = (
 				1C79B88D1DAF67A400B5AFC5 /* PMingLiU.ttf in Resources */,
 				1C5D3E4A1DADCC1E008529C0 /* LaunchScreen.storyboard in Resources */,
+				1C84E6A21DB9F74C00C49B9A /* refresh_1.gif in Resources */,
 				1C79B88C1DAF545200B5AFC5 /* Images.xcassets in Resources */,
+				1C84E6A41DB9F75500C49B9A /* refresh_2.gif in Resources */,
 				1C5D3E471DADCC1E008529C0 /* Assets.xcassets in Resources */,
 				1C5D3E451DADCC1E008529C0 /* Main.storyboard in Resources */,
 			);
