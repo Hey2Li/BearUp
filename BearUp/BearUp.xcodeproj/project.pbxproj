@@ -22,6 +22,7 @@
 		1C5D3E7C1DADE171008529C0 /* LeftDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D3E7B1DADE171008529C0 /* LeftDrawerViewController.m */; };
 		1C5D3E7F1DADE184008529C0 /* RightDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D3E7E1DADE184008529C0 /* RightDrawerViewController.m */; };
 		1C5D3E881DAE34B0008529C0 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D3E871DAE34B0008529C0 /* MMExampleDrawerVisualStateManager.m */; };
+		1C69CDE11DBDB96F00A66752 /* LHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C69CDE01DBDB96F00A66752 /* LHTTPManager.m */; };
 		1C79B8781DAF213700B5AFC5 /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C79B8771DAF213700B5AFC5 /* TitleView.m */; };
 		1C79B87B1DAF219900B5AFC5 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C79B87A1DAF219900B5AFC5 /* UIViewExt.m */; };
 		1C79B8851DAF2E7500B5AFC5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C79B8841DAF2E7500B5AFC5 /* HomeViewController.m */; };
@@ -86,6 +87,8 @@
 		1C5D3E7E1DADE184008529C0 /* RightDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightDrawerViewController.m; sourceTree = "<group>"; };
 		1C5D3E861DAE34B0008529C0 /* MMExampleDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMExampleDrawerVisualStateManager.h; sourceTree = "<group>"; };
 		1C5D3E871DAE34B0008529C0 /* MMExampleDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleDrawerVisualStateManager.m; sourceTree = "<group>"; };
+		1C69CDDF1DBDB96F00A66752 /* LHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHTTPManager.h; sourceTree = "<group>"; };
+		1C69CDE01DBDB96F00A66752 /* LHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHTTPManager.m; sourceTree = "<group>"; };
 		1C79B8761DAF213700B5AFC5 /* TitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleView.h; sourceTree = "<group>"; };
 		1C79B8771DAF213700B5AFC5 /* TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleView.m; sourceTree = "<group>"; };
 		1C79B8791DAF219900B5AFC5 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
@@ -358,6 +361,8 @@
 			children = (
 				1C7F11361DB49D3D008A259F /* LTHTTPSessionManager.h */,
 				1C7F11371DB49D3D008A259F /* LTHTTPSessionManager.m */,
+				1C69CDDF1DBDB96F00A66752 /* LHTTPManager.h */,
+				1C69CDE01DBDB96F00A66752 /* LHTTPManager.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -592,6 +597,7 @@
 				1C5D3E7F1DADE184008529C0 /* RightDrawerViewController.m in Sources */,
 				1C5CF0831DB069A4002D8A05 /* LeftDrawerTableViewCell.m in Sources */,
 				1C5D3E881DAE34B0008529C0 /* MMExampleDrawerVisualStateManager.m in Sources */,
+				1C69CDE11DBDB96F00A66752 /* LHTTPManager.m in Sources */,
 				1C79B87B1DAF219900B5AFC5 /* UIViewExt.m in Sources */,
 				1C79B88A1DAF331600B5AFC5 /* LaunchViewController.m in Sources */,
 				1C5D3E7C1DADE171008529C0 /* LeftDrawerViewController.m in Sources */,
