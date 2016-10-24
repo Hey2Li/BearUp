@@ -49,7 +49,7 @@
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
     _myCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) collectionViewLayout:flowLayout];
-    _myCollectionView.backgroundColor = RGBCOLOR(32, 32, 32);
+    _myCollectionView.backgroundColor = [UIColor orangeColor];
     _myCollectionView.pagingEnabled = YES;
     _myCollectionView.dataSource = self;
     _myCollectionView.delegate = self;
