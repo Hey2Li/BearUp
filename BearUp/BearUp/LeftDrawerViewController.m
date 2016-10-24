@@ -157,7 +157,7 @@ static NSString *identifier = @"MyCell";
         }
             break;
         case 3:{
-            [cell.TitleBtn setTitle:@"谈 论" forState:UIControlStateNormal];
+            [cell.TitleBtn setTitle:@"声 音" forState:UIControlStateNormal];
         }
             break;
         case 4:{
@@ -174,9 +174,29 @@ static NSString *identifier = @"MyCell";
         case 0:
             [self BackHome];
             break;
+        case 1:{
+            OtherViewController *vc = [[OtherViewController alloc]init];
+            vc.number = 1;
+            vc.naviTitle = @"文字";
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 2:{
+            OtherViewController *vc = [[OtherViewController alloc]init];
+            vc.number = 2;
+            vc.naviTitle = @"视频";
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 3:{
+            OtherViewController *vc = [[OtherViewController alloc]init];
+            vc.number = 3;
+            vc.naviTitle = @"声音";
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
         default:
 //            [self.navigationController pushViewController:[OtherViewController new] animated:YES];
-            [self.navigationController showViewController:[OtherViewController new] sender:nil];
             break;
     }
 }
