@@ -96,7 +96,7 @@ static NSString *identifier = @"MyCell";
     
     UILabel *centerWord = [UILabel new];
     centerWord.textColor = [UIColor whiteColor];
-    centerWord.text = @"W e  R e a d  T h e  W o r l d";
+    centerWord.text = @"H e l l o  W o r l d  !";
     centerWord.textAlignment = NSTextAlignmentCenter;
     centerWord.font = [UIFont fontWithName:@"Academy Engraved LET" size:11];
     [headerView addSubview:centerWord];
@@ -157,7 +157,7 @@ static NSString *identifier = @"MyCell";
         }
             break;
         case 3:{
-            [cell.TitleBtn setTitle:@"声 音" forState:UIControlStateNormal];
+            [cell.TitleBtn setTitle:@"漫 画" forState:UIControlStateNormal];
         }
             break;
         case 4:{
