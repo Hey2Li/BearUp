@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface OtherViewController : UIViewController
-
+@property (nonatomic, assign) NSInteger number;
+@property (nonatomic, strong) NSString *naviTitle;
 @end
