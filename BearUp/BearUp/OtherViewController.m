@@ -8,23 +8,39 @@
 
 #import "OtherViewController.h"
 #import "OtherTableViewCell.h"
+#import "TitleView.h"
+#import "LHTTPManager.h"
 
 @interface OtherViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *myTableView;
+@property (nonatomic, strong) TitleView *titleView;
+@property (nonatomic, strong) UIButton *backBtn;
+@property (nonatomic, strong) NSMutableArray *dataMutableArray;
 @end
 
 @implementation OtherViewController
 @synthesize myTableView;
 
+- (NSMutableArray *)dataMutableArray{
+    if (!_dataMutableArray) {
+        _dataMutableArray = [NSMutableArray array];
+    }
+    return _dataMutableArray;
+}
 - (void)viewWillAppear:(BOOL)animated{
-    self.navigationController.navigationBar.hidden = NO;
+    self.navigationController.navigationBar.hidden = YES;
 }
 - (void)viewWillDisappear:(BOOL)animated{
     self.navigationController.navigationBar.hidden = YES;
 }
 - (void)viewDidLoad {
+    if (self.naviTitle) {
+        self.title = self.naviTitle;
+    }
     [super viewDidLoad];
     [self initWithView];
+    [self initWithNavi];
+    [self loadData];
 }
 - (void)initWithView{
     myTableView = [UITableView new];
@@ -33,24 +49,70 @@
     myTableView.delegate = self;
     [self.view addSubview:myTableView];
     [myTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-        make.edges.mas_offset(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.edges.mas_offset(UIEdgeInsetsMake(44, 0, 0, 0));
     }];
+}
+- (void)initWithNavi {
+    _titleView = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
+    _titleView.isTranslucent = NO;
+    _titleView.backgroundColor = RGBCOLOR(32, 32, 32);;
+    switch (self.number) {
+        case 1:
+            _titleView.title = @"文字";
+            break;
+        case 2:
+            _titleView.title = @"视频";
+            break;
+        case 3:
+            _titleView.title = @"声音";
+            break;
+    }
+    [self.view addSubview:_titleView];
+    
+    UIImage *back = [UIImage imageNamed:@"back_gray"];
+    back = [back imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_backBtn setImage:back forState:UIControlStateNormal];
+    [_backBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [_backBtn setTintColor:[UIColor whiteColor]];
+    [_titleView setLeftBarButton:_backBtn];
+}
+- (void)back:(UIButton *)btn{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)loadData{
+    if (self.number) {
+        [LHTTPManager GETRequsetTableWithModel:[NSString stringWithFormat:@"%ld",(long)self.number] Page:@"0" Page_id:@"0" Create_time:@"0" Complete:^(LTHttpResult result, NSString *message, id data) {
+            if (result ==LTHttpResultSuccess) {
+                [self.dataMutableArray removeAllObjects];
+                self.dataMutableArray = [NSMutableArray arrayWithArray:data[@"datas"]];
+                [myTableView reloadData];
+            }else{
+                
+            }
+        }];
+    }
 }
 #pragma mark - tableviewDeleagate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return self.dataMutableArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     OtherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"otherCell"];
     if (!cell) {
         cell = [[OtherTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"otherCell"];
     }
+    if (self.dataMutableArray) {
+        NSDictionary *dataDic = self.dataMutableArray[indexPath.row];
+        [cell.LeftimgaeView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",dataDic[@"thumbnail"]]]];
+        cell.titleLabel.text = [NSString stringWithFormat:@"%@",dataDic[@"title"]];
+        cell.nameLabel.text = [NSString stringWithFormat:@"%@",dataDic[@"author"]];
+    }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.backgroundColor = [self randomColor];
+    cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }
 - (UIColor *)randomColor {
