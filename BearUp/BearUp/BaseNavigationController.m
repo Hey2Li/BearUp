@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationBar.hidden = YES;
-    self.navigationBar.barTintColor = [UIColor orangeColor];
+    self.navigationBar.barTintColor = KBackgroundColor;
     self.navigationBar.translucent = NO;
 }
 - (UIStatusBarStyle)preferredStatusBarStyle {
