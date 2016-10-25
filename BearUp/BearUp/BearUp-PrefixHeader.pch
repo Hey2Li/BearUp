@@ -30,13 +30,16 @@
 #import "MJRefreshAutoNormalFooter.h"
 #import "MJRefreshAutoGifFooter.h"
 #import "UIViewExt.h"
+#import "LHTTPManager.h"
+
+#import <MJExtension/MJExtension.h>
 
 
 #define kWordFont(a) ([UIFont fontWithName:@"PMingLiU" size:a])
 #define kScreenWidth ([[UIScreen mainScreen] bounds].size.width)
 #define kScreenHeight ([[UIScreen mainScreen] bounds].size.height)
 //RGB颜色
-#define KBackgroundColor [UIColor orangeColor];
+#define KBackgroundColor [UIColor colorWithRed:(32)/255.0f green:(32)/255.0f blue:(32)/255.0f alpha:1];
 #define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define LINE_COLOR [UIColor colorWithWhite:0.914 alpha:1.000];
