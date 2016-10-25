@@ -23,6 +23,8 @@
 		1C5D3E7F1DADE184008529C0 /* RightDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D3E7E1DADE184008529C0 /* RightDrawerViewController.m */; };
 		1C5D3E881DAE34B0008529C0 /* MMExampleDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D3E871DAE34B0008529C0 /* MMExampleDrawerVisualStateManager.m */; };
 		1C69CDE11DBDB96F00A66752 /* LHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C69CDE01DBDB96F00A66752 /* LHTTPManager.m */; };
+		1C78FFE31DBF07400012F1CA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C78FFE21DBF07400012F1CA /* AVFoundation.framework */; };
+		1C78FFE61DBF335F0012F1CA /* HomeCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C78FFE51DBF335F0012F1CA /* HomeCellModel.m */; };
 		1C79B8781DAF213700B5AFC5 /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C79B8771DAF213700B5AFC5 /* TitleView.m */; };
 		1C79B87B1DAF219900B5AFC5 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C79B87A1DAF219900B5AFC5 /* UIViewExt.m */; };
 		1C79B8851DAF2E7500B5AFC5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C79B8841DAF2E7500B5AFC5 /* HomeViewController.m */; };
@@ -89,6 +91,9 @@
 		1C5D3E871DAE34B0008529C0 /* MMExampleDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMExampleDrawerVisualStateManager.m; sourceTree = "<group>"; };
 		1C69CDDF1DBDB96F00A66752 /* LHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHTTPManager.h; sourceTree = "<group>"; };
 		1C69CDE01DBDB96F00A66752 /* LHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHTTPManager.m; sourceTree = "<group>"; };
+		1C78FFE21DBF07400012F1CA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1C78FFE41DBF335F0012F1CA /* HomeCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCellModel.h; sourceTree = "<group>"; };
+		1C78FFE51DBF335F0012F1CA /* HomeCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCellModel.m; sourceTree = "<group>"; };
 		1C79B8761DAF213700B5AFC5 /* TitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleView.h; sourceTree = "<group>"; };
 		1C79B8771DAF213700B5AFC5 /* TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleView.m; sourceTree = "<group>"; };
 		1C79B8791DAF219900B5AFC5 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
@@ -119,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C78FFE31DBF07400012F1CA /* AVFoundation.framework in Frameworks */,
 				5C4295645C0EF67F394DA58B /* libPods-BearUp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +316,8 @@
 		1C79B8901DAF71E900B5AFC5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C78FFE41DBF335F0012F1CA /* HomeCellModel.h */,
+				1C78FFE51DBF335F0012F1CA /* HomeCellModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -397,6 +405,7 @@
 		E919BF8A8E3DA742A9DFBB96 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1C78FFE21DBF07400012F1CA /* AVFoundation.framework */,
 				E4161CD937EBED28FA5F69BC /* libPods-BearUp.a */,
 			);
 			name = Frameworks;
@@ -605,6 +614,7 @@
 				1C95E8911DB860D800673E4C /* OtherTableViewCell.m in Sources */,
 				1C5D3E701DADD289008529C0 /* BaseNavigationController.m in Sources */,
 				1C5D3E731DADD2B0008529C0 /* BaseViewController.m in Sources */,
+				1C78FFE61DBF335F0012F1CA /* HomeCellModel.m in Sources */,
 				1C5D3E421DADCC1E008529C0 /* ViewController.m in Sources */,
 				1C79B8781DAF213700B5AFC5 /* TitleView.m in Sources */,
 				1C95E88C1DB85E9D00673E4C /* OtherViewController.m in Sources */,

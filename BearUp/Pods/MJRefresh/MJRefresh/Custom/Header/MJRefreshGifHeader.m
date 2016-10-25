@@ -95,7 +95,8 @@
     
     self.gifView.frame = self.bounds;
     if (self.stateLabel.hidden && self.lastUpdatedTimeLabel.hidden) {
-        self.gifView.contentMode = UIViewContentModeCenter;
+        self.gifView.contentMode = UIViewContentModeScaleAspectFit;
+        self.gifView.frame = CGRectMake([UIScreen mainScreen].bounds.size.width/2 - 50, 25, 100, 100);
     } else {
         self.gifView.contentMode = UIViewContentModeRight;
         
