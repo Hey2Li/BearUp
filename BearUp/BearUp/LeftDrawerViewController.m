@@ -25,7 +25,7 @@ static NSString *identifier = @"MyCell";
 - (UITableView *)myTableView{
     if (!_myTableView) {
         _myTableView = [UITableView new];
-        _myTableView.backgroundColor = [UIColor orangeColor];
+        _myTableView.backgroundColor = KBackgroundColor;
         _myTableView.delegate = self;
         _myTableView.dataSource = self;
         _myTableView.separatorStyle = NO;
@@ -42,7 +42,7 @@ static NSString *identifier = @"MyCell";
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = KBackgroundColor;
     [self initWithView];
 }
 - (void)initWithView{
@@ -80,7 +80,7 @@ static NSString *identifier = @"MyCell";
     
     //tableView头视图
     UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight/4 - 30)];
-    headerView.backgroundColor = [UIColor orangeColor];
+    headerView.backgroundColor = KBackgroundColor;
     UILabel *topTitle = [UILabel new];
     topTitle.text = @"熊起";
     topTitle.textAlignment = NSTextAlignmentCenter;
@@ -141,7 +141,7 @@ static NSString *identifier = @"MyCell";
     LeftDrawerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[LeftDrawerTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.backgroundColor = [UIColor orangeColor];
+        cell.backgroundColor = KBackgroundColor;
     }
     switch (indexPath.row) {
         case 0:{

@@ -23,7 +23,7 @@
 - (void)initWithView{
 //    self.contentView.backgroundColor = [UIColor blackColor];
     self.selectionStyle = NO;
-    self.TitleBtn.backgroundColor = [UIColor orangeColor];
+    self.TitleBtn.backgroundColor = KBackgroundColor;
     self.TitleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.TitleBtn.titleLabel.font = [UIFont fontWithName:@"PMingLiU" size:30];
     [self.TitleBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
