@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeCellModel.h"
+#import <AVFoundation/AVFoundation.h>
 
 typedef NS_ENUM(NSInteger, HomeCollectionCellStyle) {
     CellStyleNone = 0,
@@ -23,4 +25,8 @@ typedef NS_ENUM(NSInteger, HomeCollectionCellStyle) {
 @property (nonatomic, strong) UIButton *commentBtn;
 @property (nonatomic, strong) UIButton *likeBtn;
 @property (nonatomic, strong) UILabel *readCountLabel;
+@property (nonatomic, strong) NSURL *videoUrl;
+
+
+@property (nonatomic, strong) HomeCellModel *model;
 @end

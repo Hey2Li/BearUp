@@ -7,8 +7,15 @@
 //
 
 #import "HomeCollectionViewCell.h"
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @implementation HomeCollectionViewCell
+{
+    AVPlayer *_avPlayer;//播放器
+    AVPlayerLayer *_avPlayerLayer;//播放界面
+    AVPlayerItem *_avPlayerItem;//播放item
+}
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         [self initWithView];
@@ -25,7 +32,7 @@
         make.top.equalTo(self.mas_top);
         make.left.equalTo(self.mas_left);
         make.width.equalTo(@(kScreenWidth));
-        make.height.equalTo(@(kScreenHeight/3));
+        make.height.equalTo(@(kScreenHeight/3 + 50));
     }];
     self.bannerImgaeView = bannerView;
     
@@ -49,7 +56,7 @@
     [tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(tipView.mas_bottom);
         make.height.equalTo(@12);
-        make.width.equalTo(@60);
+        make.width.equalTo(@70);
         make.centerX.equalTo(self.mas_centerX);
     }];
     self.tipLabel = tipLabel;
@@ -114,6 +121,7 @@
         make.width.equalTo(@100);
         make.top.equalTo(lineLabel.mas_bottom).offset(10);
     }];
+    self.authorLabel = authorLabel;
     
     UIView *lastBottomView = [UIView new];
     [self addSubview:lastBottomView];
@@ -166,17 +174,48 @@
         make.height.equalTo(@30);
     }];
     self.readCountLabel = readCountLabel;
-    
-    switch (self.cellStyle) {
-        case 0:
-            //
-            break;
-            
-        default:
-            break;
+}
+- (void)setModel:(HomeCellModel *)model{
+    _model = model;
+    if (model) {
+        [self.bannerImgaeView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",model.thumbnail]] placeholderImage:[UIImage imageNamed:@"exporte"]];
+        self.tipLabel.text = [NSString stringWithFormat:@" %@",model.category];
+//        [self setTipLabelAttribute];
+        self.titleLabel.text = [self _clearLineBreak:model.title];
+        self.detailLabel.text = model.excerpt;
+        [self setSpaceAttribute:self.titleLabel];
+        [self setSpaceAttribute:self.detailLabel];
+        self.authorLabel.text = model.author;
+        self.readCountLabel.text = [NSString stringWithFormat:@"阅读数：%@",model.view];
+        [self.commentBtn setTitle:model.comment forState:UIControlStateNormal];
+        [self.likeBtn setTitle:model.good forState:UIControlStateNormal];
+        self.videoUrl = [NSURL URLWithString:model.video];
+        switch ([model.model integerValue]) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                break;
+        }
     }
 }
+//清除掉字符串结尾的换行符
+- (NSString *)_clearLineBreak:(NSString *)string {
+    NSString *subStrng = [string substringWithRange:NSMakeRange(string.length - 2, 2)];
+    if ([subStrng isEqualToString:@"\r\n"]) {
+        string = [string substringWithRange:NSMakeRange(0, string.length - 2)];
+    }
+    return string;
+}
 
+- (void)setTipLabelAttribute {
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc]initWithString:self.tipLabel.text];
+    [attrString addAttribute:NSKernAttributeName value:@5 range:NSMakeRange(0, attrString.length)];
+    self.tipLabel.attributedText = attrString;
+}
 //设置传入label的段间距为12
 - (void)setSpaceAttribute:(UILabel *)label {
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc]initWithString:label.text];
