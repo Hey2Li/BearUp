@@ -22,7 +22,7 @@
 - (UITableView *)myTableView{
     if (!_myTableView) {
         _myTableView = [UITableView new];
-        _myTableView.backgroundColor = [UIColor orangeColor];
+        _myTableView.backgroundColor = KBackgroundColor;
         _myTableView.delegate = self;
         _myTableView.dataSource = self;
         _myTableView.separatorStyle = NO;
@@ -41,7 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = KBackgroundColor;
     [self initWithView];
 }
 - (void)initWithView{
@@ -79,7 +79,7 @@
 
     //tableView头视图
     UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight/4)];
-    headerView.backgroundColor = [UIColor orangeColor];
+    headerView.backgroundColor = KBackgroundColor;
     
     UIImageView *headSculpture = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
     headSculpture.image = [UIImage imageNamed:@"avatar_photo"];
@@ -121,7 +121,7 @@
     LeftDrawerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[LeftDrawerTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        cell.backgroundColor = [UIColor orangeColor];
+        cell.backgroundColor = KBackgroundColor;
     }
     cell.leftDrawerBtnClick = ^{
         NSLog(@"点击了..");

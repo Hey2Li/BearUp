@@ -55,7 +55,7 @@
 - (void)initWithNavi {
     _titleView = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
     _titleView.isTranslucent = NO;
-    _titleView.backgroundColor = [UIColor orangeColor];
+    _titleView.backgroundColor = KBackgroundColor;
     switch (self.number) {
         case 1:
             _titleView.title = @"文字";
