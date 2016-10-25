@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = KBackgroundColor;
     
     self.backImage = [UIImageView new];
     self.backImage.backgroundColor = [UIColor clearColor];
