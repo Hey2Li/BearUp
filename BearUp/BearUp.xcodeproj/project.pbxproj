@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C5C44F51DC0737C00FB7C70 /* LVieoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C44F41DC0737C00FB7C70 /* LVieoView.m */; };
 		1C5CF0831DB069A4002D8A05 /* LeftDrawerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CF0821DB069A4002D8A05 /* LeftDrawerTableViewCell.m */; };
 		1C5D3E3C1DADCC1E008529C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D3E3B1DADCC1E008529C0 /* main.m */; };
 		1C5D3E3F1DADCC1E008529C0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D3E3E1DADCC1E008529C0 /* AppDelegate.m */; };
@@ -58,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C5C44F31DC0737C00FB7C70 /* LVieoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVieoView.h; sourceTree = "<group>"; };
+		1C5C44F41DC0737C00FB7C70 /* LVieoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVieoView.m; sourceTree = "<group>"; };
 		1C5CF0811DB069A4002D8A05 /* LeftDrawerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftDrawerTableViewCell.h; sourceTree = "<group>"; };
 		1C5CF0821DB069A4002D8A05 /* LeftDrawerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftDrawerTableViewCell.m; sourceTree = "<group>"; };
 		1C5D3E371DADCC1E008529C0 /* BearUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BearUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,6 +303,8 @@
 				1C79B8771DAF213700B5AFC5 /* TitleView.m */,
 				1C7F11321DB47E75008A259F /* HomeCollectionViewCell.h */,
 				1C7F11331DB47E75008A259F /* HomeCollectionViewCell.m */,
+				1C5C44F31DC0737C00FB7C70 /* LVieoView.h */,
+				1C5C44F41DC0737C00FB7C70 /* LVieoView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -617,6 +622,7 @@
 				1C78FFE61DBF335F0012F1CA /* HomeCellModel.m in Sources */,
 				1C5D3E421DADCC1E008529C0 /* ViewController.m in Sources */,
 				1C79B8781DAF213700B5AFC5 /* TitleView.m in Sources */,
+				1C5C44F51DC0737C00FB7C70 /* LVieoView.m in Sources */,
 				1C95E88C1DB85E9D00673E4C /* OtherViewController.m in Sources */,
 				1C5D3E3F1DADCC1E008529C0 /* AppDelegate.m in Sources */,
 				1C5D3E3C1DADCC1E008529C0 /* main.m in Sources */,
