@@ -81,7 +81,7 @@
     [header setImages:self.refreshingImages forState:MJRefreshStateRefreshing];
     header.lastUpdatedTimeLabel.hidden = YES;
     header.stateLabel.hidden = YES;
-    _myCollectionView.mj_header = header;
+    _myCollectionView.mj_header = header; 
 }
 - (void)refreshData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
