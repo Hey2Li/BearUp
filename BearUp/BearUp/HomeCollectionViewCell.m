@@ -190,6 +190,7 @@
         [self.commentBtn setTitle:model.comment forState:UIControlStateNormal];
         [self.likeBtn setTitle:model.good forState:UIControlStateNormal];
         self.videoUrl = [NSURL URLWithString:model.video];
+        
         switch ([model.model integerValue]) {
             case 1:
                 break;
