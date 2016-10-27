@@ -190,11 +190,11 @@
         [self.commentBtn setTitle:model.comment forState:UIControlStateNormal];
         [self.likeBtn setTitle:model.good forState:UIControlStateNormal];
         self.videoUrl = [NSURL URLWithString:model.video];
-        AVPlayerItem *item = [AVPlayerItem playerItemWithURL:self.videoUrl];
-        AVPlayer *player = [AVPlayer playerWithPlayerItem:item];
-        AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
-        [self.bannerImgaeView.layer addSublayer:playerLayer];
-        [player play];
+//        AVPlayerItem *item = [AVPlayerItem playerItemWithURL:self.videoUrl];
+//        AVPlayer *player = [AVPlayer playerWithPlayerItem:item];
+//        AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
+//        [self.bannerImgaeView.layer addSublayer:playerLayer];
+//        [player play];
         switch ([model.model integerValue]) {
             case 1:
                 break;
