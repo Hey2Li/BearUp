@@ -195,6 +195,7 @@
 //        AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:player];
 //        [self.bannerImgaeView.layer addSublayer:playerLayer];
 //        [player play];
+        
         switch ([model.model integerValue]) {
             case 1:
                 break;
