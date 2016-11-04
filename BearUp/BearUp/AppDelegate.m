@@ -24,6 +24,7 @@
     _window.backgroundColor = [UIColor lightGrayColor];
     _window.rootViewController = [LaunchViewController new];
     return YES;
+    
 }
 
 
