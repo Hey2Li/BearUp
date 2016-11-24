@@ -28,6 +28,7 @@
     //设置滑动样式
     [[MMExampleDrawerVisualStateManager sharedManager] setLeftDrawerAnimationType:MMDrawerAnimationTypeSlide];
     [[MMExampleDrawerVisualStateManager sharedManager] setRightDrawerAnimationType:MMDrawerAnimationTypeSlide];
+    //左右手势滑动
     [self setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [self setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     self.animationVelocity = 600;
