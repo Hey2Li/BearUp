@@ -68,8 +68,8 @@
     [titleLabel setFont:[UIFont fontWithName:@"PMingLiU" size:32]];
     [self addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left);
-        make.right.equalTo(self.mas_right);
+        make.left.equalTo(self.mas_left).offset(20);
+        make.right.equalTo(self.mas_right).offset(-20);
         make.top.equalTo(tipLabel.mas_bottom);
         make.height.equalTo(@(kScreenHeight/5));
     }];
