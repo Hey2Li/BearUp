@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger, HomeCollectionCellStyle) {
 @property (nonatomic, strong) UIButton *likeBtn;
 @property (nonatomic, strong) UILabel *readCountLabel;
 @property (nonatomic, strong) NSURL *videoUrl;
+@property (nonatomic, strong) UIButton *controlBtn;
 
 
 @property (nonatomic, strong) HomeCellModel *model;
