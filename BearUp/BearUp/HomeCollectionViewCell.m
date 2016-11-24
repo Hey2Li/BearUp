@@ -40,16 +40,16 @@
     
     //播放控制btn
     UIButton *controlBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    controlBtn.backgroundColor = [UIColor blueColor];
-    [bannerView addSubview:controlBtn];
-    [bannerView bringSubviewToFront:controlBtn];
+    controlBtn.backgroundColor = [UIColor colorWithWhite:1 alpha:0.6];
+    [self addSubview:controlBtn];
+    [self bringSubviewToFront:controlBtn];
     [controlBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(bannerView.mas_centerX);
         make.centerY.equalTo(bannerView.mas_centerY);
         make.height.equalTo(@80);
         make.width.equalTo(@80);
     }];
-//    [controlBtn addTarget:self action:@selector(controlBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [controlBtn addTarget:self action:@selector(controlBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [controlBtn.layer setCornerRadius:40];
     [controlBtn.layer setBorderWidth:0];
     [controlBtn.layer setMasksToBounds:YES];
