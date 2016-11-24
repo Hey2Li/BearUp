@@ -9,12 +9,14 @@
 #import "HomeCollectionViewCell.h"
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @implementation HomeCollectionViewCell
 {
     AVPlayer *_avPlayer;//播放器
     AVPlayerLayer *_avPlayerLayer;//播放界面
     AVPlayerItem *_avPlayerItem;//播放item
+    MPMoviePlayerViewController *moviePlayer;//视频播放器
 }
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
@@ -35,6 +37,25 @@
         make.height.equalTo(@(kScreenHeight/3 + 50));
     }];
     self.bannerImgaeView = bannerView;
+    
+    //播放控制btn
+    UIButton *controlBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    controlBtn.backgroundColor = [UIColor blueColor];
+    [bannerView addSubview:controlBtn];
+    [bannerView bringSubviewToFront:controlBtn];
+    [controlBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(bannerView.mas_centerX);
+        make.centerY.equalTo(bannerView.mas_centerY);
+        make.height.equalTo(@80);
+        make.width.equalTo(@80);
+    }];
+//    [controlBtn addTarget:self action:@selector(controlBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [controlBtn.layer setCornerRadius:40];
+    [controlBtn.layer setBorderWidth:0];
+    [controlBtn.layer setMasksToBounds:YES];
+    controlBtn.hidden = YES;
+    self.controlBtn = controlBtn;
+
     
     UIView *tipView = [UIView new];
     tipView.backgroundColor = RGBCOLOR(254, 194, 84);
@@ -190,19 +211,29 @@
         [self.commentBtn setTitle:model.comment forState:UIControlStateNormal];
         [self.likeBtn setTitle:model.good forState:UIControlStateNormal];
         self.videoUrl = [NSURL URLWithString:model.video];
-        
+        //判断banner类型
         switch ([model.model integerValue]) {
             case 1:
-                
+                self.controlBtn.hidden = YES;
+
                 break;
             case 2:
+                [self.controlBtn addTarget:self action:@selector(controlBtnClick) forControlEvents:UIControlEventTouchUpInside];
+                [self.controlBtn setImage:[UIImage imageNamed:@"视频"] forState:UIControlStateNormal];
+                self.controlBtn.hidden = NO;
                 break;
             case 3:
+                [self.controlBtn addTarget:self action:@selector(controlBtnClick) forControlEvents:UIControlEventTouchUpInside];
+                [self.controlBtn setImage:[UIImage imageNamed:@"音频"] forState:UIControlStateNormal];
+                self.controlBtn.hidden = NO;
                 break;
             default:
                 break;
         }
     }
+}
+- (void)controlBtnClick{
+    NSLog(@"...btn");
 }
 //清除掉字符串结尾的换行符
 - (NSString *)_clearLineBreak:(NSString *)string {
