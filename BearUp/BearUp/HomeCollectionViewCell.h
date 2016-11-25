@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HomeCellModel.h"
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 typedef NS_ENUM(NSInteger, HomeCollectionCellStyle) {
     CellStyleNone = 0,
@@ -27,6 +28,8 @@ typedef NS_ENUM(NSInteger, HomeCollectionCellStyle) {
 @property (nonatomic, strong) UILabel *readCountLabel;
 @property (nonatomic, strong) NSURL *videoUrl;
 @property (nonatomic, strong) UIButton *controlBtn;
+@property (nonatomic, strong) MPMoviePlayerController *moviePlayer;//视频播放器
+
 
 
 @property (nonatomic, strong) HomeCellModel *model;
