@@ -9,14 +9,23 @@
 #import "HomeCollectionViewCell.h"
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import <MediaPlayer/MediaPlayer.h>
 
 @implementation HomeCollectionViewCell
 {
     AVPlayer *_avPlayer;//播放器
     AVPlayerLayer *_avPlayerLayer;//播放界面
     AVPlayerItem *_avPlayerItem;//播放item
-    MPMoviePlayerViewController *moviePlayer;//视频播放器
+}
+
+- (MPMoviePlayerController *)moviePlayer{
+    if (!_moviePlayer) {
+        _moviePlayer = [[MPMoviePlayerController alloc]init];
+        _moviePlayer.repeatMode = MPMovieRepeatModeOne;
+        [_moviePlayer setShouldAutoplay:NO];
+        [_moviePlayer prepareToPlay];
+        _moviePlayer.view.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
+    }
+    return _moviePlayer;
 }
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
@@ -195,6 +204,14 @@
         make.height.equalTo(@30);
     }];
     self.readCountLabel = readCountLabel;
+    
+    [self insertSubview:self.moviePlayer.view belowSubview:self.controlBtn];
+    [self.moviePlayer.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.mas_left);
+        make.right.equalTo(self.mas_right);
+        make.bottom.equalTo(bannerView.mas_bottom);
+    }];
+    self.moviePlayer.view.hidden = YES;
 }
 - (void)setModel:(HomeCellModel *)model{
     _model = model;
@@ -215,17 +232,21 @@
         switch ([model.model integerValue]) {
             case 1:
                 self.controlBtn.hidden = YES;
-
+                self.moviePlayer.view.hidden = YES;
                 break;
             case 2:
                 [self.controlBtn addTarget:self action:@selector(controlBtnClick) forControlEvents:UIControlEventTouchUpInside];
                 [self.controlBtn setImage:[UIImage imageNamed:@"视频"] forState:UIControlStateNormal];
                 self.controlBtn.hidden = NO;
+                self.moviePlayer.view.hidden = NO;
+                self.moviePlayer.contentURL = [NSURL URLWithString:model.video];
                 break;
             case 3:
                 [self.controlBtn addTarget:self action:@selector(controlBtnClick) forControlEvents:UIControlEventTouchUpInside];
                 [self.controlBtn setImage:[UIImage imageNamed:@"音频"] forState:UIControlStateNormal];
                 self.controlBtn.hidden = NO;
+                self.moviePlayer.view.hidden = NO;
+                self.moviePlayer.contentURL = [NSURL URLWithString:model.fm];
                 break;
             default:
                 break;
@@ -233,6 +254,10 @@
     }
 }
 - (void)controlBtnClick{
+    [self insertSubview:self.moviePlayer.view aboveSubview:self.controlBtn];
+    self.moviePlayer.view.alpha = 1;
+    self.controlBtn.hidden = YES;
+    [self.moviePlayer play];
     NSLog(@"...btn");
 }
 //清除掉字符串结尾的换行符
@@ -258,4 +283,11 @@
     [attrString addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, attrString.length)];
     label.attributedText = attrString;
 }
+//当单元格移除屏幕时，播放取消，然后把播放器移除，并且等待下次播放
+- (void)prepareForReuse {
+    [self.moviePlayer.view removeFromSuperview];
+    [self.moviePlayer stop];
+//    isPlay = NO;
+}
+
 @end
