@@ -10,6 +10,7 @@
 #import "HomeCollectionViewCell.h"
 #import <ImageIO/ImageIO.h>
 #import "HomeCellModel.h"
+#import "DetailViewController.h"
 
 @interface HomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView *myCollectionView;
@@ -185,6 +186,9 @@
     return 0;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    DetailViewController *vc = [[DetailViewController alloc]init];
+    vc.article = self.dataMutableArray[indexPath.row];
+    [self.navigationController showViewController:vc sender:nil];
     NSLog(@"...CollectionCell");
 }
 

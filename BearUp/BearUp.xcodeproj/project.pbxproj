@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C59ACA61DEC258E005C57F3 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C59ACA51DEC258E005C57F3 /* DetailViewController.m */; };
 		1C5C44F51DC0737C00FB7C70 /* LVieoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5C44F41DC0737C00FB7C70 /* LVieoView.m */; };
 		1C5CF0831DB069A4002D8A05 /* LeftDrawerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CF0821DB069A4002D8A05 /* LeftDrawerTableViewCell.m */; };
 		1C5D3E3C1DADCC1E008529C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D3E3B1DADCC1E008529C0 /* main.m */; };
@@ -59,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C59ACA41DEC258E005C57F3 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		1C59ACA51DEC258E005C57F3 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		1C5C44F31DC0737C00FB7C70 /* LVieoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVieoView.h; sourceTree = "<group>"; };
 		1C5C44F41DC0737C00FB7C70 /* LVieoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVieoView.m; sourceTree = "<group>"; };
 		1C5CF0811DB069A4002D8A05 /* LeftDrawerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftDrawerTableViewCell.h; sourceTree = "<group>"; };
@@ -158,6 +161,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1C59ACA01DEC252B005C57F3 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				1C59ACA21DEC2555005C57F3 /* Model */,
+				1C59ACA31DEC256A005C57F3 /* View */,
+				1C59ACA11DEC2549005C57F3 /* Controller */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		1C59ACA11DEC2549005C57F3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1C59ACA41DEC258E005C57F3 /* DetailViewController.h */,
+				1C59ACA51DEC258E005C57F3 /* DetailViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1C59ACA21DEC2555005C57F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1C59ACA31DEC256A005C57F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		1C5CF07F1DB068FE002D8A05 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +237,7 @@
 		1C5D3E391DADCC1E008529C0 /* BearUp */ = {
 			isa = PBXGroup;
 			children = (
+				1C59ACA01DEC252B005C57F3 /* Detail */,
 				1C95E8891DB85D6B00673E4C /* Other */,
 				1C7F11351DB49D2B008A259F /* Network */,
 				1C79B87C1DAF220400B5AFC5 /* Home */,
@@ -614,6 +651,7 @@
 				1C69CDE11DBDB96F00A66752 /* LHTTPManager.m in Sources */,
 				1C79B87B1DAF219900B5AFC5 /* UIViewExt.m in Sources */,
 				1C79B88A1DAF331600B5AFC5 /* LaunchViewController.m in Sources */,
+				1C59ACA61DEC258E005C57F3 /* DetailViewController.m in Sources */,
 				1C5D3E7C1DADE171008529C0 /* LeftDrawerViewController.m in Sources */,
 				1C5D3E791DADDCFD008529C0 /* HomeDrawerViewController.m in Sources */,
 				1C95E8911DB860D800673E4C /* OtherTableViewCell.m in Sources */,
