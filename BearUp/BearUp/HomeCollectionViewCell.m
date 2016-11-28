@@ -55,11 +55,11 @@
     [controlBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(bannerView.mas_centerX);
         make.centerY.equalTo(bannerView.mas_centerY);
-        make.height.equalTo(@80);
-        make.width.equalTo(@80);
+        make.height.equalTo(@60);
+        make.width.equalTo(@60);
     }];
     [controlBtn addTarget:self action:@selector(controlBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    [controlBtn.layer setCornerRadius:40];
+    [controlBtn.layer setCornerRadius:30];
     [controlBtn.layer setBorderWidth:0];
     [controlBtn.layer setMasksToBounds:YES];
     controlBtn.hidden = YES;
@@ -208,7 +208,7 @@
     if (model) {
         [self.bannerImgaeView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",model.thumbnail]] placeholderImage:[UIImage imageNamed:@"exporte"]];
         self.tipLabel.text = [NSString stringWithFormat:@" %@",model.category];
-//        [self setTipLabelAttribute];
+        [self setTipLabelAttribute];
         self.titleLabel.text = [self _clearLineBreak:model.title];
         self.detailLabel.text = model.excerpt;
         [self setSpaceAttribute:self.titleLabel];
@@ -230,7 +230,7 @@
                 self.controlBtn.hidden = NO;
                 self.moviePlayer = [[MPMoviePlayerController alloc]initWithContentURL:[NSURL URLWithString:model.video]];
                 self.moviePlayer.view.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
-                [self addSubview:self.moviePlayer.view];
+                [self.bannerImgaeView addSubview:self.moviePlayer.view];
 //                [self insertSubview:self.moviePlayer.view belowSubview:self.controlBtn];
                 [self.moviePlayer.view mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.left.equalTo(self.mas_left);
@@ -248,11 +248,11 @@
                 self.moviePlayer = [[MPMoviePlayerController alloc]initWithContentURL:[NSURL URLWithString:model.fm]];
                 self.moviePlayer.view.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
 //                [self insertSubview:self.moviePlayer.view belowSubview:self.controlBtn];
-                [self addSubview:self.moviePlayer.view];
+                [self.bannerImgaeView addSubview:self.moviePlayer.view];
                 [self.moviePlayer.view mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.left.equalTo(self.mas_left);
                     make.right.equalTo(self.mas_right);
-                    make.bottom.equalTo(self.bannerImgaeView.mas_bottom);
+                    make.top.equalTo(self.mas_top).offset(kScreenHeight/3 + 10);
                     make.height.equalTo(@(40));
                 }];
             }
@@ -263,7 +263,9 @@
     }
 }
 - (void)controlBtnClick{
+    //讲MPMovie置于最顶
     [self insertSubview:self.moviePlayer.view aboveSubview:self.controlBtn];
+    //隐藏按钮
     self.controlBtn.hidden = YES;
     [self.moviePlayer play];
     NSLog(@"...btn");
@@ -276,7 +278,7 @@
     }
     return string;
 }
-
+//设置tipLabel字体间距为5
 - (void)setTipLabelAttribute {
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc]initWithString:self.tipLabel.text];
     [attrString addAttribute:NSKernAttributeName value:@5 range:NSMakeRange(0, attrString.length)];
@@ -295,7 +297,6 @@
 - (void)prepareForReuse {
     [self.moviePlayer.view removeFromSuperview];
     [self.moviePlayer stop];
-//    isPlay = NO;
 }
 
 @end
