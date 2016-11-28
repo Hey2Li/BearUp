@@ -17,16 +17,16 @@
     AVPlayerItem *_avPlayerItem;//播放item
 }
 
-- (MPMoviePlayerController *)moviePlayer{
-    if (!_moviePlayer) {
-        _moviePlayer = [[MPMoviePlayerController alloc]init];
-        _moviePlayer.repeatMode = MPMovieRepeatModeOne;
-        [_moviePlayer setShouldAutoplay:NO];
-        [_moviePlayer prepareToPlay];
-        _moviePlayer.view.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
-    }
-    return _moviePlayer;
-}
+//- (MPMoviePlayerController *)moviePlayer{
+//    if (!_moviePlayer) {
+//        _moviePlayer = [[MPMoviePlayerController alloc]init];
+//        _moviePlayer.repeatMode = MPMovieRepeatModeOne;
+//        [_moviePlayer setShouldAutoplay:NO];
+//        [_moviePlayer prepareToPlay];
+//        _moviePlayer.view.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
+//    }
+//    return _moviePlayer;
+//}
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         [self initWithView];
@@ -65,7 +65,6 @@
     controlBtn.hidden = YES;
     self.controlBtn = controlBtn;
 
-    
     UIView *tipView = [UIView new];
     tipView.backgroundColor = RGBCOLOR(254, 194, 84);
     [self addSubview:tipView];
@@ -195,8 +194,7 @@
     UILabel *readCountLabel = [UILabel new];
     [readCountLabel setText:@"阅读数：100W"];
     [readCountLabel setFont:[UIFont fontWithName:@"PMingLiU" size:13]];
-    [readCountLabel setTextColor:[UIColor blackColor]];
-    [self addSubview:readCountLabel];
+     [self addSubview:readCountLabel];
     [readCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(lastBottomView.mas_right);
         make.centerY.equalTo(lastBottomView.mas_centerY);
@@ -204,14 +202,6 @@
         make.height.equalTo(@30);
     }];
     self.readCountLabel = readCountLabel;
-    
-    [self insertSubview:self.moviePlayer.view belowSubview:self.controlBtn];
-    [self.moviePlayer.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.mas_left);
-        make.right.equalTo(self.mas_right);
-        make.bottom.equalTo(bannerView.mas_bottom);
-    }];
-    self.moviePlayer.view.hidden = YES;
 }
 - (void)setModel:(HomeCellModel *)model{
     _model = model;
@@ -234,19 +224,38 @@
                 self.controlBtn.hidden = YES;
                 self.moviePlayer.view.hidden = YES;
                 break;
-            case 2:
+            case 2:{
                 [self.controlBtn addTarget:self action:@selector(controlBtnClick) forControlEvents:UIControlEventTouchUpInside];
                 [self.controlBtn setImage:[UIImage imageNamed:@"视频"] forState:UIControlStateNormal];
                 self.controlBtn.hidden = NO;
-                self.moviePlayer.view.hidden = NO;
-                self.moviePlayer.contentURL = [NSURL URLWithString:model.video];
+                self.moviePlayer = [[MPMoviePlayerController alloc]initWithContentURL:[NSURL URLWithString:model.video]];
+                self.moviePlayer.view.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
+                [self addSubview:self.moviePlayer.view];
+//                [self insertSubview:self.moviePlayer.view belowSubview:self.controlBtn];
+                [self.moviePlayer.view mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.left.equalTo(self.mas_left);
+                    make.right.equalTo(self.mas_right);
+                    make.top.equalTo(self.mas_top);
+                    make.height.equalTo(@(kScreenHeight/3 + 50));
+                }];
+            }
                 break;
-            case 3:
+            case 3:{
                 [self.controlBtn addTarget:self action:@selector(controlBtnClick) forControlEvents:UIControlEventTouchUpInside];
                 [self.controlBtn setImage:[UIImage imageNamed:@"音频"] forState:UIControlStateNormal];
                 self.controlBtn.hidden = NO;
                 self.moviePlayer.view.hidden = NO;
-                self.moviePlayer.contentURL = [NSURL URLWithString:model.fm];
+                self.moviePlayer = [[MPMoviePlayerController alloc]initWithContentURL:[NSURL URLWithString:model.fm]];
+                self.moviePlayer.view.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
+//                [self insertSubview:self.moviePlayer.view belowSubview:self.controlBtn];
+                [self addSubview:self.moviePlayer.view];
+                [self.moviePlayer.view mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.left.equalTo(self.mas_left);
+                    make.right.equalTo(self.mas_right);
+                    make.bottom.equalTo(self.bannerImgaeView.mas_bottom);
+                    make.height.equalTo(@(40));
+                }];
+            }
                 break;
             default:
                 break;
@@ -255,7 +264,6 @@
 }
 - (void)controlBtnClick{
     [self insertSubview:self.moviePlayer.view aboveSubview:self.controlBtn];
-    self.moviePlayer.view.alpha = 1;
     self.controlBtn.hidden = YES;
     [self.moviePlayer play];
     NSLog(@"...btn");
