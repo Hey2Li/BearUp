@@ -82,11 +82,15 @@
     [header setImages:self.refreshingImages forState:MJRefreshStateRefreshing];
     header.lastUpdatedTimeLabel.hidden = YES;
     header.stateLabel.hidden = YES;
-    _myCollectionView.mj_header = header; 
+    _myCollectionView.mj_header = header;
+    
+    MJRefreshFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+    _myCollectionView.mj_footer = footer;
 }
 - (void)refreshData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [_myCollectionView.mj_header endRefreshing];
+        [_myCollectionView.mj_footer endRefreshing];
     });
 }
 - (void)loadData{
