@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self initWithView];
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 - (void)initWithView{
     self.titleView = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
