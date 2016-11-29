@@ -23,9 +23,11 @@
 }
 - (void)setArticle:(HomeCellModel *)article{
     _article = article;
-//    [self.LeftimgaeView sd_setImageWithURL:[NSURL URLWithString:str]];
-    self.titleLabel.text = [NSString stringWithFormat:@"%@",article.title];
-    self.nameLabel.text = [NSString stringWithFormat:@"%@",article.name];
+    if (article) {
+        [self.LeftimgaeView sd_setImageWithURL:[NSURL URLWithString:article.thumbnail]];
+        self.titleLabel.text = [NSString stringWithFormat:@"%@",article.title];
+        self.nameLabel.text = [NSString stringWithFormat:@"%@",article.name];
+    }
 }
 - (void)initWithView{
     UIImageView *imageView = [UIImageView new];
