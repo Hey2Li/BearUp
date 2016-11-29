@@ -10,6 +10,8 @@
 #import "OtherTableViewCell.h"
 #import "TitleView.h"
 #import "LHTTPManager.h"
+#import "HomeCellModel.h"
+#import "DetailViewController.h"
 
 @interface OtherViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *myTableView;
@@ -86,6 +88,11 @@
             if (result ==LTHttpResultSuccess) {
                 [self.dataMutableArray removeAllObjects];
                 self.dataMutableArray = [NSMutableArray arrayWithArray:data[@"datas"]];
+                NSArray *array = [data objectForKey:@"datas"];
+                for (NSDictionary *dic in array) {
+                    HomeCellModel *article = [HomeCellModel mj_objectWithKeyValues:dic];
+                    [self.dataMutableArray addObject:article];
+                }
                 [myTableView reloadData];
             }else{
                 
@@ -106,14 +113,22 @@
         cell = [[OtherTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"otherCell"];
     }
     if (self.dataMutableArray) {
-        NSDictionary *dataDic = self.dataMutableArray[indexPath.row];
-        [cell.LeftimgaeView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",dataDic[@"thumbnail"]]]];
-        cell.titleLabel.text = [NSString stringWithFormat:@"%@",dataDic[@"title"]];
-        cell.nameLabel.text = [NSString stringWithFormat:@"%@",dataDic[@"author"]];
+//        NSDictionary *dataDic = self.dataMutableArray[indexPath.row];
+        cell.article = self.dataMutableArray[indexPath.row];
+//        [cell.LeftimgaeView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",dataDic[@"thumbnail"]]]];
+//        cell.titleLabel.text = [NSString stringWithFormat:@"%@",dataDic[@"title"]];
+//        cell.nameLabel.text = [NSString stringWithFormat:@"%@",dataDic[@"author"]];
     }
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    HomeCellModel *article = self.dataMutableArray[indexPath.row];
+    DetailViewController *detail = [[DetailViewController alloc]init];
+    detail.article = article;
+    [self.navigationController showViewController:detail sender:nil];
 }
 - (UIColor *)randomColor {
     CGFloat hue = arc4random() % 256 / 256.0;
