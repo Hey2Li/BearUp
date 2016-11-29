@@ -84,13 +84,12 @@
     header.stateLabel.hidden = YES;
     _myCollectionView.mj_header = header;
     
-    MJRefreshFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+    MJRefreshFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadFooterData)];
     _myCollectionView.mj_footer = footer;
 }
 - (void)refreshData{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [_myCollectionView.mj_header endRefreshing];
-        [_myCollectionView.mj_footer endRefreshing];
     });
 }
 - (void)loadData{
@@ -105,6 +104,24 @@
             [_myCollectionView reloadData];
         }else{
             
+        }
+    }];
+}
+- (void)loadFooterData{
+    int page = (int)self.dataMutableArray.count/10 + 1;
+    HomeCellModel *model = [self.dataMutableArray lastObject];
+    int page_id = [model.ID intValue];
+    int create_time = [model.create_time intValue];
+    __weak typeof(self) weakSelf = self;
+    [LHTTPManager GetRequestMoreHomeArticleWithPage:page Page_id:page_id Create_time:create_time Complete:^(LTHttpResult result, NSString *message, id data) {
+        if (result == LTHttpResultSuccess) {
+            NSArray *array = [data objectForKey:@"datas"];
+            for (NSDictionary *dic in array) {
+                HomeCellModel *model = [HomeCellModel mj_objectWithKeyValues:dic];
+                [self.dataMutableArray addObject:model];
+            }
+            [self.myCollectionView reloadData];
+            [weakSelf.myCollectionView.mj_footer endRefreshing];
         }
     }];
 }
