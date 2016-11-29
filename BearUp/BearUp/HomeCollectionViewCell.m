@@ -85,7 +85,7 @@
     [tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(tipView.mas_bottom);
         make.height.equalTo(@12);
-        make.width.equalTo(@70);
+        make.width.equalTo(@100);
         make.centerX.equalTo(self.mas_centerX);
     }];
     self.tipLabel = tipLabel;
