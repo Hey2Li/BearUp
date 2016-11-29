@@ -87,7 +87,6 @@
         [LHTTPManager GETRequsetTableWithModel:[NSString stringWithFormat:@"%ld",(long)self.number] Page:@"0" Page_id:@"0" Create_time:@"0" Complete:^(LTHttpResult result, NSString *message, id data) {
             if (result ==LTHttpResultSuccess) {
                 [self.dataMutableArray removeAllObjects];
-                self.dataMutableArray = [NSMutableArray arrayWithArray:data[@"datas"]];
                 NSArray *array = [data objectForKey:@"datas"];
                 for (NSDictionary *dic in array) {
                     HomeCellModel *article = [HomeCellModel mj_objectWithKeyValues:dic];
@@ -112,13 +111,7 @@
     if (!cell) {
         cell = [[OtherTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"otherCell"];
     }
-    if (self.dataMutableArray) {
-//        NSDictionary *dataDic = self.dataMutableArray[indexPath.row];
-        cell.article = self.dataMutableArray[indexPath.row];
-//        [cell.LeftimgaeView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",dataDic[@"thumbnail"]]]];
-//        cell.titleLabel.text = [NSString stringWithFormat:@"%@",dataDic[@"title"]];
-//        cell.nameLabel.text = [NSString stringWithFormat:@"%@",dataDic[@"author"]];
-    }
+    cell.article = self.dataMutableArray[indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor whiteColor];
