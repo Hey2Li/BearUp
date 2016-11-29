@@ -18,4 +18,9 @@
     LTHTTPSessionManager *manager = [LTHTTPSessionManager new];
     [manager GETWithParameters:[NSString stringWithFormat:@"http://static.owspace.com/index.php?m=Home&c=Api&a=getList&p=3&client=iphone&page_id=0&create_time=0&iOS_version=1.0.0"] parameters:nil complete:complete];
 }
+
++ (void)GetRequestMoreHomeArticleWithPage:(int)page Page_id:(int)page_id Create_time:(int)create_time Complete:(completeBlock)complete{
+    LTHTTPSessionManager *manager = [LTHTTPSessionManager new];
+    [manager GETWithParameters:[NSString stringWithFormat:@"http://static.owspace.com/index.php?m=Home&c=Api&a=getList&p=%d&client=iphone&page_id=%d&create_time=%d&iOS_version=1.0.0",page,page_id,create_time] parameters:nil complete:complete];
+}
 @end
