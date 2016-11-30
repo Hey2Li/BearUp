@@ -8,6 +8,7 @@
 
 #import "RightDrawerViewController.h"
 #import "LeftDrawerTableViewCell.h"
+#import "ARViewController.h"
 
 @interface RightDrawerViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UIButton *BackBtn;
@@ -25,7 +26,7 @@
         _myTableView.backgroundColor = KBackgroundColor;
         _myTableView.delegate = self;
         _myTableView.dataSource = self;
-        _myTableView.separatorStyle = NO;
+        _myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _myTableView.scrollEnabled = NO;
         [self.view addSubview:_myTableView];
         [self.view sendSubviewToBack:_myTableView];
@@ -149,7 +150,10 @@
     }
     return cell;
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ARViewController *vc = [[ARViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     CGRect originFrame = cell.frame;
     CGRect frame = cell.frame;
