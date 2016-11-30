@@ -28,7 +28,7 @@ static NSString *identifier = @"MyCell";
         _myTableView.backgroundColor = KBackgroundColor;
         _myTableView.delegate = self;
         _myTableView.dataSource = self;
-        _myTableView.separatorStyle = NO;
+        _myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _myTableView.scrollEnabled = NO;
         [self.view addSubview:_myTableView];
         [_myTableView mas_makeConstraints:^(MASConstraintMaker *make) {

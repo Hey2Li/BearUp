@@ -22,7 +22,7 @@
 }
 - (void)initWithView{
 //    self.contentView.backgroundColor = [UIColor blackColor];
-    self.selectionStyle = NO;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.TitleBtn.backgroundColor = KBackgroundColor;
     self.TitleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.TitleBtn.titleLabel.font = [UIFont fontWithName:@"PMingLiU" size:30];
