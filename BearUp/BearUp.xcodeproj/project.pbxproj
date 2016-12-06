@@ -39,6 +39,28 @@
 		1C84E6A41DB9F75500C49B9A /* refresh_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1C84E6A31DB9F75500C49B9A /* refresh_2.gif */; };
 		1C95E88C1DB85E9D00673E4C /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C95E88B1DB85E9D00673E4C /* OtherViewController.m */; };
 		1C95E8911DB860D800673E4C /* OtherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C95E8901DB860D800673E4C /* OtherTableViewCell.m */; };
+		1CF363031DEE7081004E873E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF363021DEE7081004E873E /* CoreGraphics.framework */; };
+		1CF363051DEE708D004E873E /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF363041DEE708D004E873E /* CoreImage.framework */; };
+		1CF363071DEE709E004E873E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF363061DEE709E004E873E /* CoreMedia.framework */; };
+		1CF363091DEE70A9004E873E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF363081DEE70A9004E873E /* CoreVideo.framework */; };
+		1CF3630B1DEE70B2004E873E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF3630A1DEE70B2004E873E /* OpenGLES.framework */; };
+		1CF3630D1DEE70BC004E873E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF3630C1DEE70BC004E873E /* QuartzCore.framework */; };
+		1CF3630F1DEE70C4004E873E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF3630E1DEE70C4004E873E /* UIKit.framework */; };
+		1CF363121DEE70F5004E873E /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF363111DEE70F5004E873E /* ARViewController.m */; };
+		1CF363191DEE724B004E873E /* ar.cc in Sources */ = {isa = PBXBuildFile; fileRef = 1CF363131DEE724B004E873E /* ar.cc */; };
+		1CF3631A1DEE724B004E873E /* OpenGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1CF363161DEE724B004E873E /* OpenGLView.mm */; };
+		1CF3631B1DEE724B004E873E /* renderer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 1CF363171DEE724B004E873E /* renderer.cc */; };
+		1CF3631F1DEEB380004E873E /* easyar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF3631E1DEEB380004E873E /* easyar.framework */; };
+		1CF363211DEEBFE7004E873E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF363201DEEBFE7004E873E /* MediaPlayer.framework */; };
+		1CF3633D1DEEC6E7004E873E /* 1111.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CF363341DEEC6E7004E873E /* 1111.jpg */; };
+		1CF3633E1DEEC6E7004E873E /* namecard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CF363351DEEC6E7004E873E /* namecard.jpg */; };
+		1CF3633F1DEEC6E7004E873E /* argame00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CF363371DEEC6E7004E873E /* argame00.jpg */; };
+		1CF363401DEEC6E7004E873E /* argame01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CF363381DEEC6E7004E873E /* argame01.jpg */; };
+		1CF363411DEEC6E7004E873E /* argame02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CF363391DEEC6E7004E873E /* argame02.jpg */; };
+		1CF363421DEEC6E7004E873E /* argame03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CF3633A1DEEC6E7004E873E /* argame03.jpg */; };
+		1CF363431DEEC6E7004E873E /* targets.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CF3633B1DEEC6E7004E873E /* targets.json */; };
+		1CF363441DEEC6E7004E873E /* targets2.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CF3633C1DEEC6E7004E873E /* targets2.json */; };
+		1CF363491DEFFAD8004E873E /* idback.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CF363481DEFFAD8004E873E /* idback.jpg */; };
 		5C4295645C0EF67F394DA58B /* libPods-BearUp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4161CD937EBED28FA5F69BC /* libPods-BearUp.a */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +142,33 @@
 		1C95E88B1DB85E9D00673E4C /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherViewController.m; sourceTree = "<group>"; };
 		1C95E88F1DB860D800673E4C /* OtherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherTableViewCell.h; sourceTree = "<group>"; };
 		1C95E8901DB860D800673E4C /* OtherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherTableViewCell.m; sourceTree = "<group>"; };
+		1CF363021DEE7081004E873E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1CF363041DEE708D004E873E /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		1CF363061DEE709E004E873E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		1CF363081DEE70A9004E873E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		1CF3630A1DEE70B2004E873E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		1CF3630C1DEE70BC004E873E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1CF3630E1DEE70C4004E873E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1CF363101DEE70F5004E873E /* ARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARViewController.h; sourceTree = "<group>"; };
+		1CF363111DEE70F5004E873E /* ARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
+		1CF363131DEE724B004E873E /* ar.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ar.cc; sourceTree = "<group>"; };
+		1CF363141DEE724B004E873E /* ar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ar.hpp; sourceTree = "<group>"; };
+		1CF363151DEE724B004E873E /* OpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLView.h; sourceTree = "<group>"; };
+		1CF363161DEE724B004E873E /* OpenGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenGLView.mm; sourceTree = "<group>"; };
+		1CF363171DEE724B004E873E /* renderer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = renderer.cc; sourceTree = "<group>"; };
+		1CF363181DEE724B004E873E /* renderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = renderer.hpp; sourceTree = "<group>"; };
+		1CF3631E1DEEB380004E873E /* easyar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = easyar.framework; path = ../easyar.framework; sourceTree = "<group>"; };
+		1CF363201DEEBFE7004E873E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		1CF363341DEEC6E7004E873E /* 1111.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1111.jpg; path = assets/1111.jpg; sourceTree = "<group>"; };
+		1CF363351DEEC6E7004E873E /* namecard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = namecard.jpg; path = assets/namecard.jpg; sourceTree = "<group>"; };
+		1CF363371DEEC6E7004E873E /* argame00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = argame00.jpg; sourceTree = "<group>"; };
+		1CF363381DEEC6E7004E873E /* argame01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = argame01.jpg; sourceTree = "<group>"; };
+		1CF363391DEEC6E7004E873E /* argame02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = argame02.jpg; sourceTree = "<group>"; };
+		1CF3633A1DEEC6E7004E873E /* argame03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = argame03.jpg; sourceTree = "<group>"; };
+		1CF3633B1DEEC6E7004E873E /* targets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = targets.json; path = assets/targets.json; sourceTree = "<group>"; };
+		1CF3633C1DEEC6E7004E873E /* targets2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = targets2.json; path = assets/targets2.json; sourceTree = "<group>"; };
+		1CF363471DEFAE6A004E873E /* BearUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BearUp.entitlements; sourceTree = "<group>"; };
+		1CF363481DEFFAD8004E873E /* idback.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = idback.jpg; sourceTree = "<group>"; };
 		96602C5D5001829DAA8D8AD5 /* Pods-BearUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BearUp/Pods-BearUp.debug.xcconfig"; sourceTree = "<group>"; };
 		9CF4F0F4E24C1BF92F486E35 /* Pods-BearUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BearUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BearUp/Pods-BearUp.release.xcconfig"; sourceTree = "<group>"; };
 		E4161CD937EBED28FA5F69BC /* libPods-BearUp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BearUp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +179,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF363211DEEBFE7004E873E /* MediaPlayer.framework in Frameworks */,
+				1CF3631F1DEEB380004E873E /* easyar.framework in Frameworks */,
+				1CF3630F1DEE70C4004E873E /* UIKit.framework in Frameworks */,
+				1CF3630D1DEE70BC004E873E /* QuartzCore.framework in Frameworks */,
+				1CF3630B1DEE70B2004E873E /* OpenGLES.framework in Frameworks */,
+				1CF363091DEE70A9004E873E /* CoreVideo.framework in Frameworks */,
+				1CF363071DEE709E004E873E /* CoreMedia.framework in Frameworks */,
+				1CF363051DEE708D004E873E /* CoreImage.framework in Frameworks */,
+				1CF363031DEE7081004E873E /* CoreGraphics.framework in Frameworks */,
 				1C78FFE31DBF07400012F1CA /* AVFoundation.framework in Frameworks */,
 				5C4295645C0EF67F394DA58B /* libPods-BearUp.a in Frameworks */,
 			);
@@ -237,6 +295,14 @@
 		1C5D3E391DADCC1E008529C0 /* BearUp */ = {
 			isa = PBXGroup;
 			children = (
+				1CF363471DEFAE6A004E873E /* BearUp.entitlements */,
+				1CF363341DEEC6E7004E873E /* 1111.jpg */,
+				1CF363481DEFFAD8004E873E /* idback.jpg */,
+				1CF363351DEEC6E7004E873E /* namecard.jpg */,
+				1CF363361DEEC6E7004E873E /* sightplus */,
+				1CF3633B1DEEC6E7004E873E /* targets.json */,
+				1CF3633C1DEEC6E7004E873E /* targets2.json */,
+				1CF362FE1DEE7020004E873E /* AR */,
 				1C59ACA01DEC252B005C57F3 /* Detail */,
 				1C95E8891DB85D6B00673E4C /* Other */,
 				1C7F11351DB49D2B008A259F /* Network */,
@@ -444,9 +510,53 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		1CF362FE1DEE7020004E873E /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				1CF362FF1DEE702A004E873E /* Framework */,
+				1CF363101DEE70F5004E873E /* ARViewController.h */,
+				1CF363111DEE70F5004E873E /* ARViewController.m */,
+			);
+			name = AR;
+			sourceTree = "<group>";
+		};
+		1CF362FF1DEE702A004E873E /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				1CF3631E1DEEB380004E873E /* easyar.framework */,
+				1CF363131DEE724B004E873E /* ar.cc */,
+				1CF363141DEE724B004E873E /* ar.hpp */,
+				1CF363151DEE724B004E873E /* OpenGLView.h */,
+				1CF363161DEE724B004E873E /* OpenGLView.mm */,
+				1CF363171DEE724B004E873E /* renderer.cc */,
+				1CF363181DEE724B004E873E /* renderer.hpp */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		1CF363361DEEC6E7004E873E /* sightplus */ = {
+			isa = PBXGroup;
+			children = (
+				1CF363371DEEC6E7004E873E /* argame00.jpg */,
+				1CF363381DEEC6E7004E873E /* argame01.jpg */,
+				1CF363391DEEC6E7004E873E /* argame02.jpg */,
+				1CF3633A1DEEC6E7004E873E /* argame03.jpg */,
+			);
+			name = sightplus;
+			path = assets/sightplus;
+			sourceTree = "<group>";
+		};
 		E919BF8A8E3DA742A9DFBB96 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1CF363201DEEBFE7004E873E /* MediaPlayer.framework */,
+				1CF3630E1DEE70C4004E873E /* UIKit.framework */,
+				1CF3630C1DEE70BC004E873E /* QuartzCore.framework */,
+				1CF3630A1DEE70B2004E873E /* OpenGLES.framework */,
+				1CF363081DEE70A9004E873E /* CoreVideo.framework */,
+				1CF363061DEE709E004E873E /* CoreMedia.framework */,
+				1CF363041DEE708D004E873E /* CoreImage.framework */,
+				1CF363021DEE7081004E873E /* CoreGraphics.framework */,
 				1C78FFE21DBF07400012F1CA /* AVFoundation.framework */,
 				E4161CD937EBED28FA5F69BC /* libPods-BearUp.a */,
 			);
@@ -525,6 +635,14 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 5VFC77CT8S;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
 					};
 					1C5D3E4F1DADCC1E008529C0 = {
 						CreatedOnToolsVersion = 8.0;
@@ -567,11 +685,20 @@
 			files = (
 				1C79B88D1DAF67A400B5AFC5 /* PMingLiU.ttf in Resources */,
 				1C5D3E4A1DADCC1E008529C0 /* LaunchScreen.storyboard in Resources */,
+				1CF363441DEEC6E7004E873E /* targets2.json in Resources */,
 				1C84E6A21DB9F74C00C49B9A /* refresh_1.gif in Resources */,
 				1C79B88C1DAF545200B5AFC5 /* Images.xcassets in Resources */,
+				1CF363401DEEC6E7004E873E /* argame01.jpg in Resources */,
+				1CF363421DEEC6E7004E873E /* argame03.jpg in Resources */,
+				1CF3633E1DEEC6E7004E873E /* namecard.jpg in Resources */,
 				1C84E6A41DB9F75500C49B9A /* refresh_2.gif in Resources */,
 				1C5D3E471DADCC1E008529C0 /* Assets.xcassets in Resources */,
 				1C5D3E451DADCC1E008529C0 /* Main.storyboard in Resources */,
+				1CF3633F1DEEC6E7004E873E /* argame00.jpg in Resources */,
+				1CF363411DEEC6E7004E873E /* argame02.jpg in Resources */,
+				1CF363491DEFFAD8004E873E /* idback.jpg in Resources */,
+				1CF363431DEEC6E7004E873E /* targets.json in Resources */,
+				1CF3633D1DEEC6E7004E873E /* 1111.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,19 +773,23 @@
 			files = (
 				1C7F11381DB49D3D008A259F /* LTHTTPSessionManager.m in Sources */,
 				1C5D3E7F1DADE184008529C0 /* RightDrawerViewController.m in Sources */,
+				1CF3631B1DEE724B004E873E /* renderer.cc in Sources */,
 				1C5CF0831DB069A4002D8A05 /* LeftDrawerTableViewCell.m in Sources */,
 				1C5D3E881DAE34B0008529C0 /* MMExampleDrawerVisualStateManager.m in Sources */,
 				1C69CDE11DBDB96F00A66752 /* LHTTPManager.m in Sources */,
 				1C79B87B1DAF219900B5AFC5 /* UIViewExt.m in Sources */,
+				1CF363121DEE70F5004E873E /* ARViewController.m in Sources */,
 				1C79B88A1DAF331600B5AFC5 /* LaunchViewController.m in Sources */,
 				1C59ACA61DEC258E005C57F3 /* DetailViewController.m in Sources */,
 				1C5D3E7C1DADE171008529C0 /* LeftDrawerViewController.m in Sources */,
 				1C5D3E791DADDCFD008529C0 /* HomeDrawerViewController.m in Sources */,
 				1C95E8911DB860D800673E4C /* OtherTableViewCell.m in Sources */,
+				1CF363191DEE724B004E873E /* ar.cc in Sources */,
 				1C5D3E701DADD289008529C0 /* BaseNavigationController.m in Sources */,
 				1C5D3E731DADD2B0008529C0 /* BaseViewController.m in Sources */,
 				1C78FFE61DBF335F0012F1CA /* HomeCellModel.m in Sources */,
 				1C5D3E421DADCC1E008529C0 /* ViewController.m in Sources */,
+				1CF3631A1DEE724B004E873E /* OpenGLView.mm in Sources */,
 				1C79B8781DAF213700B5AFC5 /* TitleView.m in Sources */,
 				1C5C44F51DC0737C00FB7C70 /* LVieoView.m in Sources */,
 				1C95E88C1DB85E9D00673E4C /* OtherViewController.m in Sources */,
@@ -818,12 +949,32 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = BearUp/BearUp.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5VFC77CT8S;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BearUp",
+					"$(PROJECT_DIR)",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PREFIX_HEADER = "/Users/taihuitao/BearUp/BearUp/BearUp/BearUp-PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/MMDrawerController\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"$(PROJECT_DIR)/easyar",
+				);
 				INFOPLIST_FILE = BearUp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tebuy.xiongqi;
@@ -837,12 +988,32 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = BearUp/BearUp.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5VFC77CT8S;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BearUp",
+					"$(PROJECT_DIR)",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PREFIX_HEADER = "/Users/taihuitao/BearUp/BearUp/BearUp/BearUp-PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/MMDrawerController\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"$(PROJECT_DIR)/easyar",
+				);
 				INFOPLIST_FILE = BearUp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tebuy.xiongqi;

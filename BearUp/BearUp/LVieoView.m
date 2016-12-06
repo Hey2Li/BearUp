@@ -51,26 +51,26 @@
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     //取出status的新值
-    AVPlayerItemStatus status = [change[NSKeyValueChangeNewKey]intValue];
-    switch(status){
-        case AVPlayerItemStatusFailed:
-            NSLog(@"item 有误");
-            self.isReadToPlay = NO;
-            break;
-        case AVPlayerItemStatusReadyToPlay:
-            NSLog(@"准好播放了");
-            self.isReadToPlay = YES;
-            self.slider.maximumValue = self.playerItem.duration.value/self.playerItem.duration.timescale;
-            break;
-        case AVPlayerItemStatusUnknown:
-            NSLog(@"视频资源出现未知错误");
-            self.isReadToPlay = NO;
-            break;
-        default:
-            break;
-    }//移除监听（观察者）
-
-    [object removeObserver:self forKeyPath:@"status"];
+//    AVPlayerItemStatus status = [change[NSKeyValueChangeNewKey]intValue];
+//    switch(status){
+//        case AVPlayerItemStatusFailed:
+//            NSLog(@"item 有误");
+//            self.isReadToPlay = NO;
+//            break;
+//        case AVPlayerItemStatusReadyToPlay:
+//            NSLog(@"准好播放了");
+//            self.isReadToPlay = YES;
+//            self.slider.maximumValue = self.playerItem.duration.value/self.playerItem.duration.timescale;
+//            break;
+//        case AVPlayerItemStatusUnknown:
+//            NSLog(@"视频资源出现未知错误");
+//            self.isReadToPlay = NO;
+//            break;
+//        default:
+//            break;
+//    }//移除监听（观察者）
+//
+//    [object removeObserver:self forKeyPath:@"status"];
 }
 + (void)videoPlay{
     [[self alloc]videoPlay];

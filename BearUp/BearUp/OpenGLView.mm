@@ -20,7 +20,7 @@
 *  3. find the created item in the list and show key
 *  4. set key string bellow
 */
-NSString* key = @"2v7gzna2FobdReIf3lB2sZSOz0flbv8BwG7qwL5aKwk6fvb8N2KfqrSox6nNmwTCC444zBBWwvr6lImBOAiwqMKFSjI7dKyxqN6w2659f4aca550240db8aed30dbf605befkCmRVE6nsR2cRhTxHQ5QtKg87cs5E53DTGr5uV7U85TUZnKz9wGvEbFru1dQshzT0k0p";
+NSString* key = @"k47KD534iuGSn98sB90UupG8mFLrFLGHf2TJuQOWcj0SXrR4EK7Y6yjiWW75RK3q8XCDAmF97Tb0ycL88NMw5n2WVxmLtWl9i87246b2451ab5a13d81812d928859772f596DDcFssRRnZ9bExM7cS7747C5kCA9mTiqXkRkWtRPqpqEtuU1lQMqP6dAF984pKPRRIv";
 
 namespace EasyAR{
 namespace samples{
@@ -170,7 +170,7 @@ EasyAR::samples::HelloAR ar;
     ar.loadAllFromJsonFile("targets2.json");
     ar.loadFromImage("namecard.jpg");
     ar.start();
-
+    
     self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayLinkCallback:)];
     [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }

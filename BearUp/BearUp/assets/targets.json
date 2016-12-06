@@ -2,9 +2,13 @@
   "images" :
   [
     {
-      "image" : "sightplus/argame00.jpg",
+      "image" : "argame00.jpg",
       "name" : "argame"
     },
+   {
+   "image" : "1111.jpg",
+   "name" : "1111"
+   },
     {
       "image" : "idback.jpg",
       "name" : "idback",

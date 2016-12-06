@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OpenGLView.h"
 
 @interface ARViewController : UIViewController
-
+@property (nonatomic, strong) OpenGLView *glView;
 @end
