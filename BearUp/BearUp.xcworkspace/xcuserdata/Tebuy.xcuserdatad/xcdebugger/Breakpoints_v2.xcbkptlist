@@ -35,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BearUp/HomeViewController.m"
-            timestampString = "499074354.17214"
+            filePath = "BearUp/HomeCollectionViewCell.m"
+            timestampString = "502014651.542597"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "-loadData"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
+            landmarkName = "-controlBtnClick"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
