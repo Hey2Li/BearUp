@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BearUp/LeftDrawerTableViewCell.m"
-            timestampString = "498624662.657412"
+            timestampString = "502857085.334929"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "-leftDrawerClick"
             landmarkType = "7">
          </BreakpointContent>
